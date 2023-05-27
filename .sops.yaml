@@ -1,0 +1,18 @@
+---
+creation_rules:
+  - path_regex: clusters/hetzner/.*\.sops\.ya?ml
+    encrypted_regex: "^(data|stringData)$"
+    key_groups:
+      - age:
+        - age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
+  - path_regex: manifests/.*
+    encrypted_regex: "^(data|stringData)$"
+    key_groups:
+        - age:
+          - age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
+  - path_regex: manifests/.*
+    kms: "arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f"
+    aws_profile: default
+  - encrypted_regex: "^(data|stringData)$"
+    kms: "arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f"
+    aws_profile: default
