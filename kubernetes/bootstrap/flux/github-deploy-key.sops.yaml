@@ -1,0 +1,25 @@
+# yamllint disable
+# https://github.com/k8s-at-home/template-cluster-k3s/issues/324
+apiVersion: v1
+kind: Secret
+metadata:
+    name: github-deploy-key
+    namespace: flux-system
+stringData:
+    identity: ENC[AES256_GCM,data:Vix8+iLbnZ9Ey7C7YwVCi5kwUBK/Ep4aEPeE5cOj19dr9DUW26xJJ9Pb9ZPL3ous3sBtbghzCBEtaMfKVWturVt33UCTKSuI4ccOulpq1TzSR06ub6uBPr1wlWII5teu1Tpv8eFSgvnRuxfJvVJa+IdMKyO149sa0+XT5hUv9tm8u28zInGitDklJBzGn2gnKnQS/jcQ8iPJxDxlsnT3GvmMnDXB5t8oO22JGapuOJR2PFytCqU+EU1pT1wIoCdl64NvhIhyPigL3+Kl0HsqGmm80YzenIkkLfJA7GiYhQDRxnZWGOtacumoNjKoGvO5qhTZIPDEuJyWfEcVwXybsMeGMfhZAga0yHftU53t+XK0OGJmJaB20Wx7YhKmUbDa60B+bUy0pcoNQgaVWEapZHmEdIceYHTZLaPrapalUCQRGq5WJiQd++9zPM45ZBwjcJ/OAeM/uQEoUNY+5iPqNwYA+W9eQZ5XYRxnN3vgu/dcypbZRJJnJwBUEcuTlMiYz/gZIJ+h8EQEig+z93vCBac101pmzVg1aKXC7zv08tuXVSOsFHBFM7WMQuJxBTToS3NSOeYJZcPdHlyni2hZ8pMdXGsTE2RN9kRoRf7ityoM2BowfbpzW+AmtbDRsdinPTHfAoDptlkDv95vKjcH2jcpCY9bfixsUXC+1dx+c3tsAltEaawZxDhHcT1ba/V3iJeyFr3y4BGg4PZ+AXIURPbymWFbcBZCTcpt9H0Di+wwa53OMei0nndUzHaHhCd0vuwVzAIal7cX7SUEH8VAmYR74tipHUNJ4KjgMwuN0gIzVeC57sN5Ik24qM6sBm7EycqbFsQrs+bqmNv5op7atOY53rMExoRTps1uX0YNmcWz3b4MKMbbL75EMOOkW76NVgDIxE8+m+YJ/UhT9lmd331itUH3RBO7eFIXhY/63FwwlPzrkgs1/g1DLSfzUSLk5A+gnw==,iv:mV1YeTrclDxVIfhkNXRi6cKTe1J50a/A3tyZjM5LTXY=,tag:0Jg8jv5bTirpS4CHBpOhSg==,type:str]
+    known_hosts: ENC[AES256_GCM,data:Sup2ItNZDcp9pbvBj3LZyg71Kz179MLK3wUdhS1AwHNVQ59SMQeSwZea4aJsoEGpn1+/SsKVBmZ7zAtKYog+k/jxsMN97szhLGs3lhTndS1XmMkIkilpiuGtrTxKSm4pcGzUcMXJl4vcybMAmD57u8k6ECEDpjlUDXFXLhO8yd0M7kqe/z/87aKQmbIHyaOceD+8OLJvmajWyKp1oDOsSW+XBopTRoxKYL7u6sZ1PoQy2GgAQfDmjPE+y2btzgyQZlK2l5gZo5fGlG0UrFvDtkUnQsisAI0M1scm1Wtbonb1ql9H2JV4PebZBOg1DHod7ugW384cdjcp+rtR90ruOqg7vY/apcD4qNXyN2F/GHynTKUlR60cWhQ8uIY3l4x1dIoO4qVUdYLM7dfq5obVesXO8ocn8FMepOw87GZ0PsszQQp8fdEI/dcj42aUZGbR5P0bUruVsUWqpxn2ff9dggTaL8hI0NdIV6xA95w0e68afKeYSZ4yTW0XqQ97ilWw5nQwh6iu47VO4RWCynQdYl5y+abVSITjvHXtGEOfHoFyd/qQpyhrg3tum8jwBptMU5rNFm7dZlTQNTTr0IWDmMpJXH7qNb4BvXi3M2utnkfmXsvMlfKcfaDC1ACzLulH7oIeLIruDA+rv6TbXbHAVU4aghQmI4DuLit8/c7fi3pEZurWROml37jpm83p4B6PZXzHK/tqpbQP9vAcUM9eQy+3xB5nb5Fjuyqyji6jU7vvUuV735P9mcWDoho20Y4mPBpiqeFlVNfigKHa80VI/4aRFc0gA18rU61b7vv+0dC5EHzTh37uk3hDoA6bbl05rPYJPFye30g8qwrvcnotbWOPWtUyn+WBdwMZd/4Uxg==,iv:U22LVlOGBe9X015AbsMCERspJ5ydaqVPqQL4nMNGSBM=,tag:n2q1pramLT4VY4BeE6NYxg==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f
+          created_at: "2023-05-28T22:22:25Z"
+          enc: AQICAHj/+PwZrYiv+HkNp6sXnAQerEWUn8+hg6fmiGghYvJqmgFT0kYgCa4xr5udFB0iTPcVAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMujggt3jSP6w8pddyAgEQgDtZDp3LokiLIzgZvZkTozeVDF2/ESmT9E27uU16qQ/8uoJEKRjFgaVzoTb/43UDeecJ+QF2443eZ2snRA==
+          aws_profile: default
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-05-28T22:22:25Z"
+    mac: ENC[AES256_GCM,data:xEuXLRvE5eKLGaax4dZBQAQdzwIRP6B4uEBKEwS4AaFNydxdLr9v9hMiJ8r9ea+w4A4D0v2yeJpC1lv3aGPzglh6UGh4x7vqlWvQyJIyQYp6oCy4zHzrpEtLW0FCmYg1hHy745+U40hOJPwFBkIdiaWR0kSf7c9bF+ZYGMk9Owg=,iv:7J1l/cKvdyUSv/rXmYmxPSFFpBSr/HE46UoXyKJMEeU=,tag:hSPqqMmTUgJ1BZuRx0qXsQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
