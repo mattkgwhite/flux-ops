@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: external-dns-secrets
+    namespace: kube-system
+stringData:
+    access-key-id: ENC[AES256_GCM,data:Nnp8Ud/yRVi5zYo4j67wsvcPii8=,iv:Uc6bEV9fT1WBMC3RWicijjrguXqa29MZUiqW1OCYIWA=,tag:zXfmmIMDyguUA3u7/5KHxw==,type:str]
+    secret-access-key: ENC[AES256_GCM,data:0t11WKFJdEX0SBxe4lErWXae4vtwO6zmwjYMndWvBrjMWDaX8Yhwww==,iv:KcZSPSbw+SyuDwZZb5to+FBICTELAl+YZXSnjhbHuds=,tag:imQ2O8atpY6+UCGSdziC/Q==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f
+          created_at: "2023-05-30T20:01:39Z"
+          enc: AQICAHj/+PwZrYiv+HkNp6sXnAQerEWUn8+hg6fmiGghYvJqmgHXvgBBvaoxs7vu/wxteuLrAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMuzdypMIeYKb5DF/DAgEQgDsy2ACC3zU9HhRTCxIa7NhfwhTGSRZLYQYAButLO1pIXs2Hn3q3bWUgd8vKEH6K/Dl8tNq1tn4gzN1xjw==
+          aws_profile: default
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-05-30T20:01:39Z"
+    mac: ENC[AES256_GCM,data:E4+nyHYaJGP9u2UI2HskT/e2QspjyY9H+Vwvv/K1yiMiuxc8c8ghK6Ph89WRW07R0e4Mf+8nvaNbjz/tCxLX5IWTC8PDGY7ZbtXyWS3yJDXCln4Pyvhf7isHo0KSBZO8Ystq4LvPDFsrE9g2vQr8RmmrUbcSoBPwXJ/HNC8MJwU=,iv:CVCDi6smjA/RXPWDC/if4+IO35ljJYDdrRQb48Fz+yI=,tag:0v/bpHDpS1r9/LwkmgFpZQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
