@@ -7,6 +7,11 @@ metadata:
 spec:
   ipAddressPools:
     - default-pool
+  interfaces:
+  - eth0
+  # nodeSelectors:
+  # - matchLabels:
+  #     kubernetes.io/hostname: argocd
 ---
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
