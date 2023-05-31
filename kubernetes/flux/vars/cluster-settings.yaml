@@ -6,6 +6,3 @@ metadata:
   namespace: flux-system
 data:
   TIMEZONE: "Europe/London"
-  METALLB_INGRESS_ADDR: ${METALLB_INGRESS_ADDR}
-  SECRET_PUBLIC_DOMAIN: ${SECRET_PUBLIC_DOMAIN}
-  SECRET_EMAIL: ${SECRET_EMAIL}
