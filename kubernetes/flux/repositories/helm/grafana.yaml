@@ -2,9 +2,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: ingress-nginx-charts
+  name: grafana
   namespace: flux-system
 spec:
-  interval: 30m
-  url: https://kubernetes.github.io/ingress-nginx
-  timeout: 15m
+  interval: 1h
+  url: https://grafana.github.io/helm-charts
