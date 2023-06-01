@@ -20,4 +20,4 @@ metadata:
   namespace: networking
 spec:
   addresses:
-    - "${METALLB_LB_RANGE}"
+    - 168.119.230.133/32
