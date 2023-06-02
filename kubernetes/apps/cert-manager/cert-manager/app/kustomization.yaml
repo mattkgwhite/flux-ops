@@ -4,7 +4,8 @@ kind: Kustomization
 namespace: cert-manager
 resources:
   - helmrelease.yaml
-  - prometheusrule.yaml
+  # - prometheusrule.yaml
+  - https://github.com/cert-manager/cert-manager/releases/download/v1.12.1/cert-manager.crds.yaml
 configMapGenerator:
   - name: cert-manager-dashboard
     files:
