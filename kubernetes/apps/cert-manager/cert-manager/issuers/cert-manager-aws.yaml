@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: aws-creds
+    namespace: kube-system
+stringData:
+    access-key-id: ENC[AES256_GCM,data:7I9bAkGwWoQmrpkZHNkOIg+T1m0=,iv:HrJUybHtUzT4SGYe1ADu3jCstKqJUJIya9v1HU3QOFY=,tag:DnOighIWqtoBZKkzIjaKYA==,type:str]
+    secret-access-key: ENC[AES256_GCM,data:cYxCp0wzYo/68l9XOn5cYKgle9VgEp7CIGAlCEsmhSdxgYiY/BGelA==,iv:Gk/6oOf2AZ3pT6rtuxJ+27D/JxlbUo4DgSPFKFZ2Jps=,tag:L9EjJt3TPvGJzV7NwpQN6Q==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA5ZlJKQVVWbzRiU1ZYSXFT
+            MDJmMnFic1JnY2d0ek0zbFp2QTBONUFvQUJnCjUreVRydHJXblMvVjBJNmhTOUxM
+            bk5DNVluU083ek42TUtoVkhGQlNYd1EKLS0tIHkxaE1GTjV0QXFIZU1rL1AySFoy
+            UEZhQXNMTXF5a0xnSkdYWXgwdEhUbWcKtwb2IbvTaIZFuxyF/6nc/ZoS3FJV4poC
+            Dv3Jc8kJqG2Isz24KyuAUpctqWN7Lrnj4jVNvNduPgXpW6yYzPJPBw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-06-03T15:42:40Z"
+    mac: ENC[AES256_GCM,data:oHnzGn3B2M6Y3QQlmTtvxOvaSvagn6jR7BnQw+Xtkny7FLSCjaG6SdTB08fwrW1fZLRLLAetpO3rKuxl8qKTbK0CvpHxmrGpgCuwq/ryg4PgUZFWxR+VYXnOZH7+kFKrbf3zokDTloDgGAcjfIK9J8hk2qdEBGqB3hIcgwgmY8o=,iv:tg1Lni8u5QTT6nM8hpOWVLbKEasimbQIrtih804pcMc=,tag:48BCrFVvF1jwu+X6ZBZx/Q==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
