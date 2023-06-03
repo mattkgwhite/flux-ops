@@ -10,11 +10,31 @@ spec:
       name: letsencrypt-production
     solvers:
       - dns01:
-          cloudflare:
-            email: "${SECRET_EMAIL}"
-            apiKeySecretRef:
-              name: cert-manager-secret
-              key: api-key
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:
+            - "${SECRET_PUBLIC_DOMAIN}"
+            - "${SECRET_PUBLIC_DOMAIN2}"
+            - "${SECRET_PUBLIC_DOMAIN3}"
+            - "${SECRET_PUBLIC_DOMAIN4}"
+acme:
+    email: "${SECRET_EMAIL}"
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: acme-prod-account-key
+    solvers:
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
         selector:
           dnsZones:
             - "${SECRET_PUBLIC_DOMAIN}"
