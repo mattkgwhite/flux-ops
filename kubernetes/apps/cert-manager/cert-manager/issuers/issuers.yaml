@@ -35,11 +35,12 @@ spec:
       name: letsencrypt-staging
     solvers:
       - dns01:
-          cloudflare:
-            email: "${SECRET_EMAIL}"
-            apiKeySecretRef:
-              name: cert-manager-secret
-              key: api-key
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
         selector:
           dnsZones:
             - "${SECRET_PUBLIC_DOMAIN}"
