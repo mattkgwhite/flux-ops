@@ -18,10 +18,37 @@ spec:
               key: secret-access-key
         selector:
           dnsZones:
-            - "${SECRET_PUBLIC_DOMAIN}"
-            - "${SECRET_PUBLIC_DOMAIN2}"
-            - "${SECRET_PUBLIC_DOMAIN3}"
-            - "${SECRET_PUBLIC_DOMAIN4}"
+            - squirrelmentality.co.uk
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:            
+            - robotwizard.co.uk
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:
+            - hacksm.net
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:
+            - matt-white.co.uk
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
