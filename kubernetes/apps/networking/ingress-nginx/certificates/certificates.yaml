@@ -2,119 +2,119 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: "${SECRET_DOMAIN/./-}-production"
+  name: "${SECRET_PUBLIC_DOMAIN/./-}-production"
   namespace: networking
 spec:
-  secretName: "${SECRET_DOMAIN/./-}-production-tls"
+  secretName: "${SECRET_PUBLIC_DOMAIN/./-}-production-tls"
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "${SECRET_DOMAIN}"
+  commonName: "${SECRET_PUBLIC_DOMAIN}"
   dnsNames:
-    - "${SECRET_DOMAIN}"
-    - "*.${SECRET_DOMAIN}"
+    - "${SECRET_PUBLIC_DOMAIN}"
+    - "*.${SECRET_PUBLIC_DOMAIN}"
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: "${SECRET_DOMAIN/./-}-staging"
+  name: "${SECRET_PUBLIC_DOMAIN/./-}-staging"
   namespace: networking
 spec:
-  secretName: "${SECRET_DOMAIN/./-}-staging-tls"
+  secretName: "${SECRET_PUBLIC_DOMAIN/./-}-staging-tls"
   issuerRef:
     name: letsencrypt-staging
     kind: ClusterIssuer
-  commonName: "${SECRET_DOMAIN}"
+  commonName: "${SECRET_PUBLIC_DOMAIN}"
   dnsNames:
-    - "${SECRET_DOMAIN}"
-    - "*.${SECRET_DOMAIN}"
+    - "${SECRET_PUBLIC_DOMAIN}"
+    - "*.${SECRET_PUBLIC_DOMAIN}"
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: "${SECRET_DOMAIN2/./-}-production"
+#   name: "${SECRET_PUBLIC_DOMAIN2/./-}-production"
 #   namespace: networking
 # spec:
-#   secretName: "${SECRET_DOMAIN2/./-}-production-tls"
+#   secretName: "${SECRET_PUBLIC_DOMAIN2/./-}-production-tls"
 #   issuerRef:
 #     name: letsencrypt-production
 #     kind: ClusterIssuer
-#   commonName: "${SECRET_DOMAIN2}"
+#   commonName: "${SECRET_PUBLIC_DOMAIN2}"
 #   dnsNames:
-#     - "${SECRET_DOMAIN2}"
-#     - "*.${SECRET_DOMAIN2}"
+#     - "${SECRET_PUBLIC_DOMAIN2}"
+#     - "*.${SECRET_PUBLIC_DOMAIN2}"
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: "${SECRET_DOMAIN2/./-}-staging"
+#   name: "${SECRET_PUBLIC_DOMAIN2/./-}-staging"
 #   namespace: networking
 # spec:
-#   secretName: "${SECRET_DOMAIN2/./-}-staging-tls"
+#   secretName: "${SECRET_PUBLIC_DOMAIN2/./-}-staging-tls"
 #   issuerRef:
 #     name: letsencrypt-staging
 #     kind: ClusterIssuer
-#   commonName: "${SECRET_DOMAIN2}"
+#   commonName: "${SECRET_PUBLIC_DOMAIN2}"
 #   dnsNames:
-#     - "${SECRET_DOMAIN2}"
-#     - "*.${SECRET_DOMAIN2}"
+#     - "${SECRET_PUBLIC_DOMAIN2}"
+#     - "*.${SECRET_PUBLIC_DOMAIN2}"
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: "${SECRET_DOMAIN3/./-}-production"
+#   name: "${SECRET_PUBLIC_DOMAIN3/./-}-production"
 #   namespace: networking
 # spec:
-#   secretName: "${SECRET_DOMAIN3/./-}-production-tls"
+#   secretName: "${SECRET_PUBLIC_DOMAIN3/./-}-production-tls"
 #   issuerRef:
 #     name: letsencrypt-production
 #     kind: ClusterIssuer
-#   commonName: "${SECRET_DOMAIN3}"
+#   commonName: "${SECRET_PUBLIC_DOMAIN3}"
 #   dnsNames:
-#     - "${SECRET_DOMAIN3}"
-#     - "*.${SECRET_DOMAIN3}"
+#     - "${SECRET_PUBLIC_DOMAIN3}"
+#     - "*.${SECRET_PUBLIC_DOMAIN3}"
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: "${SECRET_DOMAIN3/./-}-staging"
+#   name: "${SECRET_PUBLIC_DOMAIN3/./-}-staging"
 #   namespace: networking
 # spec:
-#   secretName: "${SECRET_DOMAIN3/./-}-staging-tls"
+#   secretName: "${SECRET_PUBLIC_DOMAIN3/./-}-staging-tls"
 #   issuerRef:
 #     name: letsencrypt-staging
 #     kind: ClusterIssuer
-#   commonName: "${SECRET_DOMAIN3}"
+#   commonName: "${SECRET_PUBLIC_DOMAIN3}"
 #   dnsNames:
-#     - "${SECRET_DOMAIN3}"
-#     - "*.${SECRET_DOMAIN3}"
+#     - "${SECRET_PUBLIC_DOMAIN3}"
+#     - "*.${SECRET_PUBLIC_DOMAIN3}"
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: "${SECRET_DOMAIN4/./-}-production"
+#   name: "${SECRET_PUBLIC_DOMAIN4/./-}-production"
 #   namespace: networking
 # spec:
-#   secretName: "${SECRET_DOMAIN4/./-}-production-tls"
+#   secretName: "${SECRET_PUBLIC_DOMAIN4/./-}-production-tls"
 #   issuerRef:
 #     name: letsencrypt-production
 #     kind: ClusterIssuer
-#   commonName: "${SECRET_DOMAIN4}"
+#   commonName: "${SECRET_PUBLIC_DOMAIN4}"
 #   dnsNames:
-#     - "${SECRET_DOMAIN4}"
-#     - "*.${SECRET_DOMAIN4}"
+#     - "${SECRET_PUBLIC_DOMAIN4}"
+#     - "*.${SECRET_PUBLIC_DOMAIN4}"
 # ---
 # apiVersion: cert-manager.io/v1
 # kind: Certificate
 # metadata:
-#   name: "${SECRET_DOMAIN4/./-}-staging"
+#   name: "${SECRET_PUBLIC_DOMAIN4/./-}-staging"
 #   namespace: networking
 # spec:
-#   secretName: "${SECRET_DOMAIN4/./-}-staging-tls"
+#   secretName: "${SECRET_PUBLIC_DOMAIN4/./-}-staging-tls"
 #   issuerRef:
 #     name: letsencrypt-staging
 #     kind: ClusterIssuer
-#   commonName: "${SECRET_DOMAIN4}"
+#   commonName: "${SECRET_PUBLIC_DOMAIN4}"
 #   dnsNames:
-#     - "${SECRET_DOMAIN4}"
-#     - "*.${SECRET_DOMAIN4}"
+#     - "${SECRET_PUBLIC_DOMAIN4}"
+#     - "*.${SECRET_PUBLIC_DOMAIN4}"

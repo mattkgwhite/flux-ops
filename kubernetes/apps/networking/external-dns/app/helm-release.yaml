@@ -50,7 +50,7 @@ spec:
       - ["crd","ingress"]
     txtPrefix: "k8s."
     txtOwnerId: "default"
-    domainFilters: ["${SECRET_DOMAIN}", "${SECRET_DOMAIN2}", "${SECRET_DOMAIN3}", "${SECRET_DOMAIN4}"]
+    domainFilters: ["${SECRET_PUBLIC_DOMAIN}", "${SECRET_PUBLIC_DOMAIN2}", "${SECRET_PUBLIC_DOMAIN3}", "${SECRET_PUBLIC_DOMAIN4}"]
     podAnnotations:
       secret.reloader.stakater.com/reload: external-dns-secret
     # serviceMonitor:
