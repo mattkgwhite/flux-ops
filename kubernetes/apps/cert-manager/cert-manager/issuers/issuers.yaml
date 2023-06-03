@@ -44,6 +44,33 @@ spec:
         selector:
           dnsZones:
             - "${SECRET_PUBLIC_DOMAIN}"
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:            
             - "${SECRET_PUBLIC_DOMAIN2}"
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:
             - "${SECRET_PUBLIC_DOMAIN3}"
+      - dns01:
+          route53:
+            region: us-east-1
+            accessKeyID: AKIAW4YYMLNFHLSLCLZX
+            secretAccessKeySecretRef:
+              name: aws-creds
+              key: secret-access-key
+        selector:
+          dnsZones:
             - "${SECRET_PUBLIC_DOMAIN4}"
