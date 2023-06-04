@@ -48,7 +48,6 @@ spec:
       - --aws-zone-type=public
     policy: sync
     sources:
-      - crds
       - ingress
     txtPrefix: "k8s."
     txtOwnerId: "default"
