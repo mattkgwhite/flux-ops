@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: hcloud
+    namespace: kube-system
+stringData:
+    hcloudApiToken: ENC[AES256_GCM,data:RS6dfEz833WBVtfadANYeLU/YMt/SzwAIb4fTUfTyIE2fl8meDW2INECDjX///JG6/rN13jbzgsEZ62NBOl85Q==,iv:rU2vC1sXmazbJ3qyt8A3S1K+nQIUxKks08l8J+fcRLw=,tag:qA1dwqlzBpJA01i2DuBB3Q==,type:str]
+    token: ENC[AES256_GCM,data:2HHUKAB12hSC07JCzDnfLPdFOXIVVp7KsbKFrELIHZVAztZvG07wxImXIYNW2vy1QEgYhU0R8OkA1NY+xW0NAg==,iv:rKzqhXx9nthwyp7m93uc0dqiOmCmBP4TG5ND3/P8UOE=,tag:c/wOV0Xsofn6gVxY/oG8hg==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f
+          created_at: "2023-03-18T14:59:00Z"
+          enc: AQICAHj/+PwZrYiv+HkNp6sXnAQerEWUn8+hg6fmiGghYvJqmgElMVU16MAyVs+pymrIuxVpAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMo6l2JNTtjNyEoAp/AgEQgDtXw4PBzhU/kOcKLmWNXQttm61EneE/kDnES181FxSnkpwaNvXctbrsq45Injlxv3zLpcXTR8rBGNlplQ==
+          aws_profile: default
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-03-18T14:59:00Z"
+    mac: ENC[AES256_GCM,data:Ve0WQW6TnPG2uI/Qvw0En2XERUPexCuBWG1sS4udAlDajYXP1z7aKTpbaxij7hKaKy6Cr+UZBpF6h3zJdwrXwsaUJwSpeCiFcFd9diu7+c5jsemWMADGCJBY8x0GfTHsN7G9Lc/jwictM/udnlqJXnh6swFrwsXzA54/l2oY/FU=,iv:pWowqn+8ESCQe4B3PGrb6yQnmDYSHs4iWOI67OyRDzI=,tag:W0H9TCHkJ60QcRAdaTdEtQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
