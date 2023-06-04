@@ -37,6 +37,6 @@ spec:
         - "9.9.9.9"
     prometheus:
       enabled: false
-      servicemonitor:
+    servicemonitor:
         enabled: false
         prometheusInstance: monitoring
