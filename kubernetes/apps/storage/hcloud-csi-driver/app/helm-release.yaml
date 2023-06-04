@@ -5,7 +5,7 @@ metadata:
   name: hcloud-csi-driver
   namespace: kube-system
 spec:
-  interval: 5m
+  interval: 15m
   chart:
     spec:
       chart: hcloud-csi-driver
@@ -14,7 +14,15 @@ spec:
         kind: HelmRepository
         name: mlohr-charts
         namespace: flux-system
-      interval: 5m
+  maxHistory: 2
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
   values:
     secret:
       existingSecretName: hetzner-api
