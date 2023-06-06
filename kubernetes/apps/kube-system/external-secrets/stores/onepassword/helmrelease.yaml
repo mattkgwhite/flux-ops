@@ -113,13 +113,13 @@ spec:
           httpGet:
             path: /health
             port: *port
-          initialDelaySeconds: 15
+          initialDelaySeconds: 25
         livenessProbe:
           httpGet:
             path: /heartbeat
             port: *port
           failureThreshold: 3
           periodSeconds: 30
-          initialDelaySeconds: 15
+          initialDelaySeconds: 25
         volumeMounts:
           - { name: shared, mountPath: /home/opuser/.op/data }
