@@ -15,9 +15,9 @@ spec:
         name: authentik-charts
         namespace: flux-system
       interval: 5m
-      valuesFrom:
-        - kind: Secret
-          name: authentik-secrets
+  valuesFrom:
+    - kind: Secret
+      name: authentik-secrets
   values:
     image:
       repository: ghcr.io/goauthentik/server
