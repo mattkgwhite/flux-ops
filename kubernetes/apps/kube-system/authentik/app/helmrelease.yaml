@@ -14,14 +14,12 @@ spec:
         kind: HelmRepository
         name: authentik-charts
         namespace: flux-system
-      interval: 5m
+      interval: 1h0m0s
   valuesFrom:
     - kind: Secret
       name: authentik-secrets
   values:
-    image:
-      repository: ghcr.io/goauthentik/server
-      tag: 2023.5.3
+    fullnameOverride: authentik
     ingress:
       enabled: true
       ingressClassName: nginx
@@ -34,36 +32,31 @@ spec:
         - hosts:
             - authentik.robotwizard.co.uk
           secretName: robotwizard-authentik
-    resources:
-      server:
-        requests: 
-          cpu: 200m
-        limits: 
-          cpu: "2"
-    geoip:
-      enabled: false
-    authentik:
-
-      outposts:
-        docker_image_base: ghcr.io/goauthentik/%(type)s:%(version)s
-
-      postgresql:
-        host: '{{ .Release.Name }}-postgresql'
-        name: authentik
-        user: authentik
-      redis:
-        host: '{{ .Release.Name }}-redis-master'
-
+    # resources:
+    #   server:
+    #     requests: 
+    #       cpu: 200m
+    #     limits: 
+    #       cpu: "2"
     postgresql:
       enabled: true
-      persistence:
-        enabled: true
-        storageClass: hcloud-volumes
-      postgresqlUsername: authentik
-      postgresqlDatabase: authentik
-    redis:
+      metrics:
+        enabled: false
+        serviceMonitor:
+          enabled: false
+    redis: 
       enabled: true
-      auth:
-        enabled: true
-      # global:
-      #   storageClass: hcloud-volumes
+      metrics:
+        enabled: false
+        serviceMonitor: 
+          enabled: true
+    prometheus: 
+      serviceMonitor:
+        create: false
+    image:
+      repository: ghcr.io/goauthentik/server
+      tag: 2023.5.3
+    authentik:
+      postgresql:
+        name: "authentik"
+        user: "authentik"
