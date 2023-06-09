@@ -61,9 +61,9 @@ spec:
       worker:
         requests:
           cpu: 5m
-    livenessProbe:
-      initialDelaySeconds: 15
-      periodSeconds: 10
-    readinessProbe:
-      initialDelaySeconds: 15
-      periodSeconds: 10
+    # livenessProbe:
+    #   initialDelaySeconds: 15
+    #   periodSeconds: 10
+    # readinessProbe:
+    #   initialDelaySeconds: 15
+    #   periodSeconds: 10
