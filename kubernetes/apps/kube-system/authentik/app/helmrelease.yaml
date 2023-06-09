@@ -32,12 +32,6 @@ spec:
         - hosts:
             - authentik.robotwizard.co.uk
           secretName: robotwizard-authentik
-    # resources:
-    #   server:
-    #     requests: 
-    #       cpu: 200m
-    #     limits: 
-    #       cpu: "2"
     postgresql:
       enabled: true
       metrics:
@@ -60,3 +54,16 @@ spec:
       postgresql:
         name: "authentik"
         user: "authentik"
+    resources:
+      server: 
+        requests:
+          cpu: 5m
+      worker:
+        requests:
+          cpu: 5m
+    livenessProbe:
+      initialDelaySeconds: 15
+      periodSeconds: 10
+    readinessProbe:
+      initialDelaySeconds: 15
+      periodSeconds: 10
