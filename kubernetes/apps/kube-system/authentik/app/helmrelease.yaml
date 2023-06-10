@@ -23,15 +23,18 @@ spec:
     ingress:
       enabled: true
       ingressClassName: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/target: ingress.squirrelmentality.co.uk
+        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
       hosts:
-        - host: authentik.robotwizard.co.uk
+        - host: authentik.squirellmentality.co.uk
           paths:
             - path: "/"
               pathType: Prefix
       tls:
         - hosts:
-            - authentik.robotwizard.co.uk
-          secretName: robotwizard-authentik
+            - authentik.squirellmentality.co.uk
+          secretName: squirellmentality-authentik
     postgresql:
       enabled: true
       metrics:
