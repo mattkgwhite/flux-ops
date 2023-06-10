@@ -31,7 +31,7 @@ spec:
         enabled: true
       service: 
         annotations:
-          external-dns.alpha.kubernetes.io.
+          external-dns.alpha.kubernetes.io/hostname: ingress.squirrelmentality.co.uk
       ingressClassResource:
         name: nginx
         enabled: true
