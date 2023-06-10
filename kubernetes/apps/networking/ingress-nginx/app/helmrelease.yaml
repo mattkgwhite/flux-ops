@@ -29,8 +29,14 @@ spec:
     controller:
       publishService:
         enabled: true
+      service: 
+        annotations:
+          external-dns.alpha.kubernetes.io.
       ingressClassResource:
-        default: true
+        name: nginx
+        enabled: true
+        default: false
+        controllerValue: "k8s.io/ingress-nginx"
       config:
         client-header-timeout: 120
         client-body-buffer-size: "100M"
