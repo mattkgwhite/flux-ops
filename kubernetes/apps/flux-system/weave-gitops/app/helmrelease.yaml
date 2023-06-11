@@ -34,7 +34,7 @@ spec:
       enabled: true
       className: nginx
       hosts:
-        - host: "gitops.squirellmentality.co.uk"
+        - host: "ops.squirellmentality.co.uk"
           paths:
             - path: /
               pathType: Prefix
