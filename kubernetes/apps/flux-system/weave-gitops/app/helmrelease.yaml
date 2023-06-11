@@ -33,6 +33,8 @@ spec:
     ingress:
       enabled: true
       className: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/target: ingress.${SECRET_PUBLIC_DOMAIN}
       hosts:
         - host: ops.squirellmentality.co.uk
           paths:
@@ -40,7 +42,7 @@ spec:
               pathType: Prefix
       tls:
         - hosts:
-            - *host
+            - ops.squirellmentality.co.uk
     networkPolicy:
       create: false
     metrics:
