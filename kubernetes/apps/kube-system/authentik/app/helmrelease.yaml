@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: authentik
-  namespace: security
+  namespace: kube-system
 spec:
   interval: 5m
   chart:
@@ -22,19 +22,6 @@ spec:
     fullnameOverride: authentik
     ingress:
       enabled: true
-      ingressClassName: nginx
-      annotations:
-        external-dns.alpha.kubernetes.io/target: "ingress.squirrelmentality.co.uk"
-        nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-      hosts:
-        - host: authentik.squirellmentality.co.uk
-          paths:
-            - path: "/"
-              pathType: Prefix
-      tls:
-        - hosts:
-            - authentik.squirellmentality.co.uk
-          secretName: squirellmentality-authentik
     postgresql:
       enabled: true
       metrics:

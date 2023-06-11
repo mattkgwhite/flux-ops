@@ -1,0 +1,40 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: squirrelmentality-authentik
+  namespace: kube-system
+spec:
+  commonName: authentik.squirellmentality.co.uk
+  secretName: squirrelmentality-authentik
+  dnsNames:
+    - authentik.squirellmentality.co.uk
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: uptime-kuma
+  namespace: monitoring
+  annotations:
+    external-dns.alpha.kubernetes.io/target: "ingress.squirrelmentality.co.uk"
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - authentik.squirellmentality.co.uk
+    secretName: squirrelmentality-authentik
+  rules:
+  - host: authentik.squirellmentality.co.uk
+    http:
+      paths:
+      - backend:
+          service:
+            name: authentik
+            port:
+              number: 80
+        path: /
+        pathType: Prefix

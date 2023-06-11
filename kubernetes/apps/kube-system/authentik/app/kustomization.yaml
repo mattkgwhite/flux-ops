@@ -4,6 +4,7 @@ kind: Kustomization
 namespace: kube-system
 resources:
   - ./authentik-secret.yaml
+  - ./ingress.yaml
   - ./helmrelease.yaml
 labels:
   - pairs:
