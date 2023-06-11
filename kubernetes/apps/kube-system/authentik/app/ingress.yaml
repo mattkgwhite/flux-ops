@@ -16,8 +16,8 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: uptime-kuma
-  namespace: monitoring
+  name: authentik
+  namespace: kube-system
   annotations:
     external-dns.alpha.kubernetes.io/target: "ingress.squirrelmentality.co.uk"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
