@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: keycloak-credentials
+    namespace: security
+stringData:
+    admin-password: ENC[AES256_GCM,data:67h9U421p7QsE7AnbX4tn9273A==,iv:wdpJIyTUK/4jl9AZwQl7wiMpenyMz9n5D78LHERNhT4=,tag:xA7WePnc6YxyraQbd+C1ew==,type:str]
+    management-password: ENC[AES256_GCM,data:ZWcqG5T0qLfwTpJhAUxEv8mPE2KfNHbpSFv1hO8yCtM=,iv:jYs3CFPIRwnWoX+HKstF4qrU6aLu+tgH44vi5u1n3lw=,tag:jkJ2/2qTK/66zyFKC8FqdQ==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBaelBYS3VqMFI1WDdreG1Y
+            Q2VjbTlqTUNrQ1loaGhrZVBsdVJRWVRSalY0CjVFdXpBeHlGRWxzb1NqcHNJOGFB
+            U2pENHRLbG9TTHRVQTVkK2k5VUtLU1EKLS0tIFNHM1BHUi9sbWZoay9vdHhLeXFv
+            MWszb0RKU1djTjM1d0wrMDBnelJDYjgKotLxAGG9QIgcLPSVgoo2cgNoiruy4VgV
+            hqrpq3KYu4jamElL3W1wrqhAJe41YOlf5M2WFAxkdf1STOXLo1JwnA==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-06-10T16:07:04Z"
+    mac: ENC[AES256_GCM,data:uaBqBXUc+5SZhAr0BNwXtgR6K3QPuFd5E3CMjliQYdT31/Macz/QtEGJZsRUJDGerQfJXuFoM7XuAGYfFkk1qgyd/PUvsdyZJIzhoK/NG7ecX2gyq8CxCoHNlsfMj/VyBWPIE7Pu9vhMdumVtzwhY2BQkJcyqqgb5DcnxG6YZCk=,iv:EjnjqF7wZkJdu/piA8K913LA57InUywxXK99hqF3gFQ=,tag:a4izIRjbO+L7QWSdFRhCEA==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3

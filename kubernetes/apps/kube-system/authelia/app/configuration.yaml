@@ -1,0 +1,12 @@
+
+access_control:
+  default_policy: two_factor
+  rules:
+    - domain: ["*.squirellmentality.co.uk"]
+      policy: one_factor
+  
+identity_providers:
+  oidc:
+    cors:
+      endpoints: ["authorization", "token", "revocation", "introspection"]
+      allowed_origins_from_client_redirect_uris: true

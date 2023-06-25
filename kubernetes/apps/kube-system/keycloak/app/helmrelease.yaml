@@ -1,0 +1,64 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: keycloak
+  namespace: security
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://charts.bitnami.com/bitnami
+      chart: keycloak
+      version: 15.1.3
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+      interval: 5m
+  values:
+    auth:
+      existingSecret:
+        name: keycloak-credentials
+        keyMapping:
+          admin-password: admin-password
+          management-password: management-password
+    proxy: reencrypt
+    service:
+      type: ClusterIP
+      externalTrafficPolicy: null
+    ingress:
+      enabled: true
+      ingressClassName: "nginx"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+      hostname: keycloak.${SECRET_PUBLIC_DOMAIN}
+      tls: false
+      extraTls:
+        - secretName: keycloak-${SECRET_PUBLIC_DOMAIN}
+          hosts:
+            - keycloak.${DOMAIN}
+    podSecurityContext:
+      enabled: true
+      fsGroup: 1001
+    containerSecurityContext:
+      enabled: true
+      runAsUser: 1001
+      runAsNonRoot: true
+    postgresql:
+      enabled: true
+      auth:
+        existingSecret:
+          name: keycloak-db-credentials
+          keyMapping:
+            postgresPassword: postgresPassword
+            database: database
+            username: admin-password
+            password: management-password
+      architecture: standalone
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+    cache:
+      enabled: true
