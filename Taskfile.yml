@@ -13,8 +13,10 @@ env:
 
 includes:
   # ansible: .taskfiles/AnsibleTasks.yml
-  cluster: .taskfiles/ClusterTasks.yml
   # precommit: .taskfiles/PrecommitTasks.yml
+  ku: .taskfiles/Kubernetes/Tasks.yml
+  es: .taskfiles/Kubernetes/Tasks.yml
+
 
 tasks:
   init:
@@ -57,3 +59,5 @@ tasks:
     desc: Configure repository from env settings
     cmds:
       - ./configure
+    defaults: 
+      cmds: ["task -l"]
