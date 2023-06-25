@@ -1,0 +1,38 @@
+global:
+  nameOverride: uptime-kuma
+
+image:
+  repository: uptime-kuma-container-image
+  pullPolicy: IfNotPresent
+
+env:
+  TZ: Europe/London
+
+service:
+  main:
+    enabled: true
+    type: ClusterIP
+    ports:
+      http:
+        protocol: TCP
+        port: 80
+        targetPort: 3001
+  extname:
+    # Broken in Chart v1.2.2, Common 4.5.2
+    enabled: false
+    type: ExternalName
+    externalName: traefik.robotwizard.co.uk
+    annotations:
+      external-dns.alpha.kubernetes.io/hostname: uptime.robotwizard.co.uk
+      external-dns.alpha.kubernetes.io/ttl: "300"
+
+ingress:
+  main:
+    enabled: false
+
+# persistence:
+#   data:
+#     enabled: true
+#     storageClass: ssd
+#     accessMode: ReadWriteMany
+#     size: 4Gi
