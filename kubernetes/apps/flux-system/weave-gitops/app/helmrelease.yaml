@@ -25,6 +25,7 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
+  timeout: 30m
   values:
     adminUser:
       create: true
