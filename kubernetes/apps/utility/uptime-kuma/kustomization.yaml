@@ -6,7 +6,7 @@ namespace: monitoring
 images:
   - name: uptime-kuma-container-image
     newName: docker.io/louislam/uptime-kuma
-    newTag: 1.22.0
+    newTag: 1.22.1
 
 helmCharts:
   - name: kah-common-chart
