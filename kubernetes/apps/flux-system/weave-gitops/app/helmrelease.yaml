@@ -36,15 +36,22 @@ spec:
       annotations:
         hajimari.io/icon: sawtooth-wave
         external-dns.alpha.kubernetes.io/target: ingress.squirellmentality.co.uk
-      hosts:
-        - host: ops.squirellmentality.co.uk
-          paths:
-            - path: /
-              pathType: Prefix
+        cert-manager.io/cluster-issuer: letsencrypt-production
       tls:
         - hosts:
             - ops.squirellmentality.co.uk
           secretname: ops-cert
+      rules:
+      - host: ops.squirellmentality.co.uk
+        http:
+          paths:
+          - backend:
+              service: 
+                name: weave-gitops
+                port: 
+                  number: 9001
+            path: /
+            pathType: prefix
     networkPolicy:
       create: false
     metrics:
