@@ -19,36 +19,9 @@ spec:
         selector:
           dnsZones:
             - squirrelmentality.co.uk
-      - dns01:
-          route53:
-            region: us-east-1
-            accessKeyID: AKIAW4YYMLNFHLSLCLZX
-            secretAccessKeySecretRef:
-              name: aws-creds
-              key: secret-access-key
-        selector:
-          dnsZones:            
             - robotwizard.co.uk
-      - dns01:
-          route53:
-            region: us-east-1
-            accessKeyID: AKIAW4YYMLNFHLSLCLZX
-            secretAccessKeySecretRef:
-              name: aws-creds
-              key: secret-access-key
-        selector:
-          dnsZones:
-            - hacksm.net
-      - dns01:
-          route53:
-            region: us-east-1
-            accessKeyID: AKIAW4YYMLNFHLSLCLZX
-            secretAccessKeySecretRef:
-              name: aws-creds
-              key: secret-access-key
-        selector:
-          dnsZones:
             - matt-white.co.uk
+            - hacksm.net
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -71,33 +44,6 @@ spec:
         selector:
           dnsZones:
             - squirrelmentality.co.uk
-      - dns01:
-          route53:
-            region: us-east-1
-            accessKeyID: AKIAW4YYMLNFHLSLCLZX
-            secretAccessKeySecretRef:
-              name: aws-creds
-              key: secret-access-key
-        selector:
-          dnsZones:            
             - robotwizard.co.uk
-      - dns01:
-          route53:
-            region: us-east-1
-            accessKeyID: AKIAW4YYMLNFHLSLCLZX
-            secretAccessKeySecretRef:
-              name: aws-creds
-              key: secret-access-key
-        selector:
-          dnsZones:
-            - hacksm.net
-      - dns01:
-          route53:
-            region: us-east-1
-            accessKeyID: AKIAW4YYMLNFHLSLCLZX
-            secretAccessKeySecretRef:
-              name: aws-creds
-              key: secret-access-key
-        selector:
-          dnsZones:
             - matt-white.co.uk
+            - hacksm.net
