@@ -33,7 +33,7 @@ spec:
       enabled: true
       ingressClassName: "nginx"
       annotations: 
-        external-dns.alpha.kubernetes.io/target: "ingress.squirrelmentality.co.uk"
+        external-dns.alpha.kubernetes.io/target: "ingress.robotwizard.co.uk"
         nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
       hosts:
         - host: vault.robotwizard.co.uk
