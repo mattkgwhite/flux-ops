@@ -35,7 +35,7 @@ spec:
       className: nginx
       annotations:
         # hajimari.io/icon: sawtooth-wave
-        # external-dns.alpha.kubernetes.io/hostname: ingress.squirrelmentality.co.uk
+        external-dns.alpha.kubernetes.io/hostname: nginx.robotwizard.co.uk
         cert-manager.io/cluster-issuer: letsencrypt-production
       tls:
         - hosts:
