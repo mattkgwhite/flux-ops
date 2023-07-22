@@ -35,23 +35,17 @@ spec:
       className: nginx
       annotations:
         # hajimari.io/icon: sawtooth-wave
-        external-dns.alpha.kubernetes.io/hostname: nginx.robotwizard.co.uk
+        external-dns.alpha.kubernetes.io/hostname: ingress.robotwizard.co.uk
         cert-manager.io/cluster-issuer: letsencrypt-production
       tls:
         - hosts:
             - ops.robotwizard.co.uk
           secretName: ops-cert
-      rules:
-      - host: ops.robotwizard.co.uk
-        http:
+      hosts:
+        - hosts: ops.robotwizard.co.uk
           paths:
-          - backend:
-              service:
-                name: weave-gitops
-                port:
-                  number: 9001
-            path: /
-            pathType: Prefix
+            - path: /
+              pathType: Prefix
     networkPolicy:
       create: false
     metrics:
