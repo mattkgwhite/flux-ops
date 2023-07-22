@@ -1,120 +1,64 @@
 ---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/certificate_v1.json
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: "${SECRET_PUBLIC_DOMAIN/./-}-production"
+  name: squirrel-mentality-co-uk
   namespace: networking
 spec:
-  secretName: "${SECRET_PUBLIC_DOMAIN/./-}-production-tls"
+  secretName: squirrel-mentality-co-uk-tls
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "${SECRET_PUBLIC_DOMAIN}"
+  commonName: squirrel-mentality-co-uk
   dnsNames:
-    - "${SECRET_PUBLIC_DOMAIN}"
-    - "*.${SECRET_PUBLIC_DOMAIN}"
+    - squirrelmentality.co.uk
+    - "*.squirrelmentality.co.uk"
 ---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/certificate_v1.json
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: "${SECRET_PUBLIC_DOMAIN/./-}-staging"
+  name: robotwizard-co-uk
   namespace: networking
 spec:
-  secretName: "${SECRET_PUBLIC_DOMAIN/./-}-staging-tls"
+  secretName: robotwizard-co-uk-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: "${SECRET_PUBLIC_DOMAIN}"
+  commonName: robotwizard-co-uk
   dnsNames:
-    - "${SECRET_PUBLIC_DOMAIN}"
-    - "*.${SECRET_PUBLIC_DOMAIN}"
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: "${SECRET_PUBLIC_DOMAIN2/./-}-production"
-#   namespace: networking
-# spec:
-#   secretName: "${SECRET_PUBLIC_DOMAIN2/./-}-production-tls"
-#   issuerRef:
-#     name: letsencrypt-production
-#     kind: ClusterIssuer
-#   commonName: "${SECRET_PUBLIC_DOMAIN2}"
-#   dnsNames:
-#     - "${SECRET_PUBLIC_DOMAIN2}"
-#     - "*.${SECRET_PUBLIC_DOMAIN2}"
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: "${SECRET_PUBLIC_DOMAIN2/./-}-staging"
-#   namespace: networking
-# spec:
-#   secretName: "${SECRET_PUBLIC_DOMAIN2/./-}-staging-tls"
-#   issuerRef:
-#     name: letsencrypt-staging
-#     kind: ClusterIssuer
-#   commonName: "${SECRET_PUBLIC_DOMAIN2}"
-#   dnsNames:
-#     - "${SECRET_PUBLIC_DOMAIN2}"
-#     - "*.${SECRET_PUBLIC_DOMAIN2}"
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: "${SECRET_PUBLIC_DOMAIN3/./-}-production"
-#   namespace: networking
-# spec:
-#   secretName: "${SECRET_PUBLIC_DOMAIN3/./-}-production-tls"
-#   issuerRef:
-#     name: letsencrypt-production
-#     kind: ClusterIssuer
-#   commonName: "${SECRET_PUBLIC_DOMAIN3}"
-#   dnsNames:
-#     - "${SECRET_PUBLIC_DOMAIN3}"
-#     - "*.${SECRET_PUBLIC_DOMAIN3}"
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: "${SECRET_PUBLIC_DOMAIN3/./-}-staging"
-#   namespace: networking
-# spec:
-#   secretName: "${SECRET_PUBLIC_DOMAIN3/./-}-staging-tls"
-#   issuerRef:
-#     name: letsencrypt-staging
-#     kind: ClusterIssuer
-#   commonName: "${SECRET_PUBLIC_DOMAIN3}"
-#   dnsNames:
-#     - "${SECRET_PUBLIC_DOMAIN3}"
-#     - "*.${SECRET_PUBLIC_DOMAIN3}"
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: "${SECRET_PUBLIC_DOMAIN4/./-}-production"
-#   namespace: networking
-# spec:
-#   secretName: "${SECRET_PUBLIC_DOMAIN4/./-}-production-tls"
-#   issuerRef:
-#     name: letsencrypt-production
-#     kind: ClusterIssuer
-#   commonName: "${SECRET_PUBLIC_DOMAIN4}"
-#   dnsNames:
-#     - "${SECRET_PUBLIC_DOMAIN4}"
-#     - "*.${SECRET_PUBLIC_DOMAIN4}"
-# ---
-# apiVersion: cert-manager.io/v1
-# kind: Certificate
-# metadata:
-#   name: "${SECRET_PUBLIC_DOMAIN4/./-}-staging"
-#   namespace: networking
-# spec:
-#   secretName: "${SECRET_PUBLIC_DOMAIN4/./-}-staging-tls"
-#   issuerRef:
-#     name: letsencrypt-staging
-#     kind: ClusterIssuer
-#   commonName: "${SECRET_PUBLIC_DOMAIN4}"
-#   dnsNames:
-#     - "${SECRET_PUBLIC_DOMAIN4}"
-#     - "*.${SECRET_PUBLIC_DOMAIN4}"
+    - robotwizard.co.uk
+    - "*.robotwizard.co.uk"
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/certificate_v1.json
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: matt-white-co-uk
+  namespace: networking
+spec:
+  secretName: matt-white-co-uk-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: matt-white-co-uk
+  dnsNames:
+    - matt-white.co.uk
+    - "*.matt-white.co.uk"
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/certificate_v1.json
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hacksm-net
+  namespace: networking
+spec:
+  secretName: hacksm-net-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: hacksm-net
+  dnsNames:
+    - hacksm-net
+    - "*.hacksm-net"
