@@ -61,4 +61,4 @@ spec:
   commonName: hacksm-net
   dnsNames:
     - hacksm-net
-    - "*.hacksm-net"
+    - "*.hacksm.net"
