@@ -49,8 +49,8 @@ spec:
         keep-alive-requests: 10000
         proxy-body-size: "100M"
         ssl-protocols: "TLSv1.3 TLSv1.2"
-      extraArgs:
-        default-ssl-certificate: "networking/${SECRET_PUBLIC_DOMAIN/./-}-production-tls"
+      # extraArgs:
+      #   default-ssl-certificate: "networking/${SECRET_PUBLIC_DOMAIN/./-}-production-tls"
       resources:
         requests:
           cpu: 10m
