@@ -40,7 +40,7 @@ spec:
       tls:
         - hosts:
             - ops.squirellmentality.co.uk
-          secretname: ops-cert
+          secretName: ops-cert
       hosts:
         - hosts: ops.squirrelmentality.co.uk
           paths:
