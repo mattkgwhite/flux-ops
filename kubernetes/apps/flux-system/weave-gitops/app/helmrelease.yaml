@@ -35,14 +35,15 @@ spec:
       className: nginx
       annotations:
         hajimari.io/icon: sawtooth-wave
+        external-dns.alpha.kubernetes.io/target: ingress.squirellmentality.co.uk
       hosts:
-        - host: &host "gitops.${SECRET_DOMAIN}"
+        - host: ops.squirellmentality.co.uk
           paths:
             - path: /
               pathType: Prefix
       tls:
         - hosts:
-            - *host
+            - ops.squirellmentality.co.uk
     networkPolicy:
       create: false
     metrics:
