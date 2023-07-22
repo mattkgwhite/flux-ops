@@ -10,7 +10,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: squirrel-mentality-co-uk
+  commonName: squirrelmetality.co.uk
   dnsNames:
     - squirrelmentality.co.uk
     - "*.squirrelmentality.co.uk"
@@ -26,7 +26,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: robotwizard-co-uk
+  commonName: robotwizard.co.uk
   dnsNames:
     - robotwizard.co.uk
     - "*.robotwizard.co.uk"
@@ -42,7 +42,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: matt-white-co-uk
+  commonName: matt-white.co.uk
   dnsNames:
     - matt-white.co.uk
     - "*.matt-white.co.uk"
@@ -58,7 +58,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer 
-  commonName: hacksm-net
+  commonName: hacksm.net
   dnsNames:
-    - hacksm-net
+    - hacksm.net
     - "*.hacksm.net"
