@@ -34,7 +34,7 @@ spec:
       enabled: true
       className: nginx
       annotations:
-        hajimari.io/icon: sawtooth-wave
+        # hajimari.io/icon: sawtooth-wave
         external-dns.alpha.kubernetes.io/target: ingress.squirellmentality.co.uk
         cert-manager.io/cluster-issuer: letsencrypt-production
       tls:
