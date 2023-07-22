@@ -41,17 +41,11 @@ spec:
         - hosts:
             - ops.squirellmentality.co.uk
           secretname: ops-cert
-      rules:
-      - host: ops.squirellmentality.co.uk
-        http:
+      hosts:
+        - hosts: ops.squirrelmentality.co.uk
           paths:
-          - backend:
-              service: 
-                name: weave-gitops
-                port: 
-                  number: 9001
-            path: /
-            pathType: prefix
+            - path: /
+              pathType: Prefix
     networkPolicy:
       create: false
     metrics:
