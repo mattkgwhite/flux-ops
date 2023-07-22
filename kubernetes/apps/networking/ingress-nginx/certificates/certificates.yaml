@@ -10,7 +10,7 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-  commonName: squirrelmetality.co.uk
+  commonName: squirrelmentality.co.uk
   dnsNames:
     - squirrelmentality.co.uk
     - "*.squirrelmentality.co.uk"
