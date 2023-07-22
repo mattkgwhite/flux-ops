@@ -50,6 +50,8 @@ spec:
                 name: weave-gitops
                 port:
                   number: 9001
+            path: /
+            pathType: Prefix
     networkPolicy:
       create: false
     metrics:
