@@ -5,11 +5,11 @@ metadata:
   name: weave-gitops
   namespace: flux-system
 spec:
-  interval: 15m
+  interval: 30m
   chart:
     spec:
       chart: weave-gitops
-      version: 4.0.23
+      version: 4.0.26
       sourceRef:
         kind: HelmRepository
         name: weave-gitops
@@ -25,7 +25,6 @@ spec:
       retries: 3
   uninstall:
     keepHistory: false
-  timeout: 30m
   values:
     adminUser:
       create: true
@@ -35,15 +34,15 @@ spec:
       enabled: true
       className: nginx
       annotations:
-        external-dns.alpha.kubernetes.io/target: ingress.squirellmentality.co.uk
+        hajimari.io/icon: sawtooth-wave
       hosts:
-        - host: ops.squirellmentality.co.uk
+        - host: &host "gitops.${SECRET_DOMAIN}"
           paths:
             - path: /
               pathType: Prefix
       tls:
         - hosts:
-            - ops.squirellmentality.co.uk
+            - *host
     networkPolicy:
       create: false
     metrics:

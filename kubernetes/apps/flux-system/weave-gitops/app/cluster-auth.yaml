@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: cluster-user-auth
+    namespace: flux-system
+type: Opaque
+stringData:
+    username: ENC[AES256_GCM,data:VzCGkTA=,iv:pT9LEuI5Z5ZHVVUPEifE3EqEE0ivZwBl/pfVUdCELQ4=,tag:WwwgXJExdDm31kzSTgjlvQ==,type:str]
+    password: ENC[AES256_GCM,data:pBJyJkjYHOuRCwR6IUS3g7ythVjg2Rcf16keBZ4CprovshwdtW/kiehSJbiGmjC4wkMO/r812hxbBp/kBK5eOQ==,iv:eoQStdBJumk1VWaCbF7lHZOLqsCwvNCvkrLeeGnkqWU=,tag:LL/fWQTeq3beRLPWRTqRsA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBLaExJRmVDbjg4ZHlGYVhx
+            R3NYdmlEWWFKVHZNKzUySUVRUFNpOVRhSTNJCmg4alRlTG5ZZ3lINnBkL0gzYXpZ
+            OEZKcHk4ampSdVZPbElmL241VWJxVEEKLS0tIGZrSjFEZDVwMU1qbG1RUkhBYkUz
+            SlhLZ0t1RUJXWWZrVGpvQXRPOVdhMTAKPpfhBR/RH61P7vTCSeF+qKWM9FIamTZS
+            FhfEsOMPgMWP892j4oHABtMwoh++L4xzjz9aWeKno57Izb5S4i4/vw==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-07-22T15:10:13Z"
+    mac: ENC[AES256_GCM,data:KCfaLQ+ivQOJ6LFXtuJipO/jPRJMSilj7cO4uaieXcnSpECkIIJapze0zy/WT/S57bih1cr9PRRTndJZ2LznJQRnOTT4178xRkKmenrMTKfQhLQBzVan1diTr5nKoj/s1Rcm7AAUUsNorbZ7s85yGf0MDyn5VacpDg1rEEZKccE=,iv:Zfs0Qi/2uuzJZsOfAZjWRJ/aytuFtVD/OrQwjnPP+sg=,tag:4uzLzF9ekDKSRJ6CDPnxrQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
