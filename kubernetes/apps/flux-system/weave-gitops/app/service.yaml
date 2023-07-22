@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: weave-gitops-extname
+  annotations:
+    external-dns.alpha.kubernetes.io/hostname: ops.robotwizard.co.uk
+    external-dns.alpha.kubernetes.io/ttl: "300"
+  labels:
+    app.kubernetes.io/instance: weave-gitops
+spec:
+  type: ExternalName
+  externalName: nginx.robotwizard.co.uk
+  sessionAffinity: None

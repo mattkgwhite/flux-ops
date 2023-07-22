@@ -5,3 +5,4 @@ namespace: flux-system
 resources:
   - ./helmrelease.yaml
   - ./cluster-auth.yaml
+  - ./service.yaml
