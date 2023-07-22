@@ -57,7 +57,7 @@ spec:
   secretName: hacksm-net-tls
   issuerRef:
     name: letsencrypt-production
-    kind: ClusterIssuer
+    kind: ClusterIssuer 
   commonName: hacksm-net
   dnsNames:
     - hacksm-net
