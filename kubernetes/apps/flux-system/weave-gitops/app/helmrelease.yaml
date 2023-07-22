@@ -43,7 +43,7 @@ spec:
               pathType: Prefix
       tls:
         - hosts:
-            - ops.squirellmentality.co.uk
+            - letsencrypt-production
     networkPolicy:
       create: false
     metrics:
