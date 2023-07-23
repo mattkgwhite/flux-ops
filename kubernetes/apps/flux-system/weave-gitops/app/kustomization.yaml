@@ -6,3 +6,4 @@ resources:
   - ./helmrelease.yaml
   - ./cluster-auth.yaml
   - ./service.yaml
+  - ./ingress.yaml

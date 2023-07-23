@@ -1,0 +1,39 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ops-cert
+  namespace: flux-system
+spec:
+  commonName: ops.robotwizard.co.uk
+  secretName: ops-cert
+  dnsNames:
+    - ops.robotwizard.co.uk
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: weave-gitops
+  namespace: flux-system
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - ops.robotwizard.co.uk
+    secretName: ops-cert
+  rules:
+  - host: ops.robotwizard.co.uk
+    http:
+      paths:
+      - backend:
+          service:
+            name: weave-gitops
+            port:
+              number: 9001
+        path: /
+        pathType: Prefix
