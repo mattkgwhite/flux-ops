@@ -3,7 +3,7 @@ apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
   name: uptime-kuma
-  namespace: tools
+  namespace: monitoring
 spec:
   interval: 15m
   chart:
@@ -20,7 +20,7 @@ spec:
       repository: louislam/uptime-kuma
       tag: '1'
     env:
-      TZ: "America/Chicago"
+      TZ: "Europe/London"
     service:
       main:
         ports:
@@ -30,7 +30,7 @@ spec:
       main:
         enabled: true
         annotations:
-          kubernetes.io/ingress.class: "nginx-external"
+          kubernetes.io/ingress.class: "nginx"
           nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
           nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
           nginx.ingress.kubernetes.io/server-snippets: |
