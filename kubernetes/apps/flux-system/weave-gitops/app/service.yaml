@@ -3,6 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: weave-gitops-extname
+  namespace: flux-system
   annotations:
     external-dns.alpha.kubernetes.io/hostname: ops.robotwizard.co.uk
     external-dns.alpha.kubernetes.io/ttl: "300"
