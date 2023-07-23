@@ -12,28 +12,28 @@ spec:
   issuerRef:
     name: letsencrypt-production
     kind: ClusterIssuer
-# ---
-# apiVersion: networking.k8s.io/v1
-# kind: Ingress
-# metadata:
-#   name: uptime-kuma
-#   namespace: utility
-#   annotations:
-#     cert-manager.io/cluster-issuer: letsencrypt-production
-# spec:
-#   ingressClassName: nginx
-#   tls:
-#   - hosts:
-#     - uptime.robotwizard.co.uk
-#     secretName: uptime-cert
-#   rules:
-#   - host: uptime.robotwizard.co.uk
-#     http:
-#       paths:
-#       - backend:
-#           service:
-#             name: uptime-kuma
-#             port:
-#               number: 80
-#         path: /
-#         pathType: Prefix
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: uptime-kuma
+  namespace: utility
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-production
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - uptime.robotwizard.co.uk
+    secretName: uptime-cert
+  rules:
+  - host: uptime.robotwizard.co.uk
+    http:
+      paths:
+      - backend:
+          service:
+            name: uptime-kuma
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
