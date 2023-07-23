@@ -32,20 +32,20 @@ spec:
       username: admin
     ingress:
       enabled: true
-      # className: nginx
-      # annotations:
-      #   # hajimari.io/icon: sawtooth-wave
-      #   external-dns.alpha.kubernetes.io/hostname: "ingress.robotwizard.co.uk"
-      #   cert-manager.io/cluster-issuer: letsencrypt-production
-      # tls:
-      #   - hosts:
-      #       - "ops.robotwizard.co.uk"
-      #     secretName: ops-cert
-      # hosts:
-      #   - hosts: "ops.robotwizard.co.uk"
-      #     paths:
-      #       - path: /
-      #         pathType: Prefix
+      className: nginx
+      annotations:
+        # hajimari.io/icon: sawtooth-wave
+        external-dns.alpha.kubernetes.io/hostname: "ingress.robotwizard.co.uk"
+        cert-manager.io/cluster-issuer: letsencrypt-production
+      tls:
+        - hosts:
+            - "ops.robotwizard.co.uk"
+          secretName: ops-cert
+      hosts:
+        - hosts: "ops.robotwizard.co.uk"
+          paths:
+            - path: /
+              pathType: Prefix
     networkPolicy:
       create: false
     metrics:
