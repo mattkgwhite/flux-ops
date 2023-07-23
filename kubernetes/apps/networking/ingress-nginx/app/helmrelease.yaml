@@ -27,122 +27,122 @@ spec:
     keepHistory: false
   values:
     controller:
-  name: controller
-  containerName: controller
-  admissionWebhooks:
-    enabled: false
-  replicaCount: 1
-  config:
-    custom-http-errors: 404,401,403,500,503
-    hsts-max-age: "31449600"
-    force-ssl-redirect: "true"
-  use-forwarded-headers: "true"
-  containerPort:
-    http: 80
-    https: 443
-  dnsPolicy: ClusterFirst
-  ingressClassResource:
-    name: nginx
-    enabled: true
-    default: false
-    controllerValue: "k8s.io/ingress-nginx"
-  ingressClass: nginx
-  publishService:
-    enabled: false # TODO: Maybe turn this on later??
-  kind: Deployment # DaemonSet??
-  # replicaCount: 2
-  minAvailable: 1
-  resources:
-    requests:
-      cpu: 100m
-      memory: 90Mi
-  autoscaling:
-    enabled: false
-    minReplicas: 1
-    maxReplicas: 2
-    targetCPUUtilizationPercentage: 50
-    targetMemoryUtilizationPercentage: 50
-    behavior: {}
-    # scaleDown:
-    #   stabilizationWindowSeconds: 300
-    #   policies:
-    #   - type: Pods
-    #     value: 1
-    #     periodSeconds: 180
-    # scaleUp:
-    #   stabilizationWindowSeconds: 300
-    #   policies:
-    #   - type: Pods
-    #     value: 2
-    #     periodSeconds: 60
-  service:
-    enabled: true
-    # -- If enabled is adding an appProtocol option for Kubernetes service. An appProtocol field replacing annotations that were
-    # using for setting a backend protocol. Here is an example for AWS: service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
-    # It allows choosing the protocol for each backend specified in the Kubernetes service.
-    # See the following GitHub issue for more details about the purpose: https://github.com/kubernetes/kubernetes/issues/40244
-    # Will be ignored for Kubernetes versions older than 1.20
-    ##
-    appProtocol: true
-    externalTrafficPolicy: Local
-    labels: {}
-    enableHttp: true
-    enableHttps: true
-    ipFamilyPolicy: "SingleStack"
-    ipFamilies:
-    - IPv4
-    ports:
+    name: controller
+    containerName: controller
+    admissionWebhooks:
+      enabled: false
+    replicaCount: 1
+    config:
+      custom-http-errors: 404,401,403,500,503
+      hsts-max-age: "31449600"
+      force-ssl-redirect: "true"
+    use-forwarded-headers: "true"
+    containerPort:
       http: 80
       https: 443
-    targetPorts:
-      http: http
-      https: https
-    type: LoadBalancer
-    external:
+    dnsPolicy: ClusterFirst
+    ingressClassResource:
+      name: nginx
       enabled: true
-    internal:
+      default: false
+      controllerValue: "k8s.io/ingress-nginx"
+    ingressClass: nginx
+    publishService:
+      enabled: false # TODO: Maybe turn this on later??
+    kind: Deployment # DaemonSet??
+    # replicaCount: 2
+    minAvailable: 1
+    resources:
+      requests:
+        cpu: 100m
+        memory: 90Mi
+    autoscaling:
       enabled: false
-      annotations: {}
-      loadBalancerSourceRanges: []
-  shareProcessNamespace: false
-  opentelemetry:
-    enabled: false
-    containerSecurityContext:
-      allowPrivilegeEscalation: false
-  metrics:
-    enabled: false
+      minReplicas: 1
+      maxReplicas: 2
+      targetCPUUtilizationPercentage: 50
+      targetMemoryUtilizationPercentage: 50
+      behavior: {}
+      # scaleDown:
+      #   stabilizationWindowSeconds: 300
+      #   policies:
+      #   - type: Pods
+      #     value: 1
+      #     periodSeconds: 180
+      # scaleUp:
+      #   stabilizationWindowSeconds: 300
+      #   policies:
+      #   - type: Pods
+      #     value: 2
+      #     periodSeconds: 60
     service:
-      servicePort: 10254
-      type: ClusterIP
-    serviceMonitor:
+      enabled: true
+      # -- If enabled is adding an appProtocol option for Kubernetes service. An appProtocol field replacing annotations that were
+      # using for setting a backend protocol. Here is an example for AWS: service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
+      # It allows choosing the protocol for each backend specified in the Kubernetes service.
+      # See the following GitHub issue for more details about the purpose: https://github.com/kubernetes/kubernetes/issues/40244
+      # Will be ignored for Kubernetes versions older than 1.20
+      ##
+      appProtocol: true
+      externalTrafficPolicy: Local
+      labels: {}
+      enableHttp: true
+      enableHttps: true
+      ipFamilyPolicy: "SingleStack"
+      ipFamilies:
+      - IPv4
+      ports:
+        http: 80
+        https: 443
+      targetPorts:
+        http: http
+        https: https
+      type: LoadBalancer
+      external:
+        enabled: true
+      internal:
+        enabled: false
+        annotations: {}
+        loadBalancerSourceRanges: []
+    shareProcessNamespace: false
+    opentelemetry:
       enabled: false
-      scrapeInterval: 30s
-    prometheusRule:
+      containerSecurityContext:
+        allowPrivilegeEscalation: false
+    metrics:
       enabled: false
-      additionalLabels: {}
-  lifecycle:
-    preStop:
-      exec:
-        command:
-        - /wait-shutdown
-  priorityClassName: ""
+      service:
+        servicePort: 10254
+        type: ClusterIP
+      serviceMonitor:
+        enabled: false
+        scrapeInterval: 30s
+      prometheusRule:
+        enabled: false
+        additionalLabels: {}
+    lifecycle:
+      preStop:
+        exec:
+          command:
+          - /wait-shutdown
+    priorityClassName: ""
 
-revisionHistoryLimit: 10
-defaultBackend:
-  enabled: true
-  image:
-    repository: billimek/custom-error-pages
-    tag: 0.4.4
-  resources:
-    requests:
-      memory: 250Mi
-      cpu: 25m
-    limits:
-      memory: 350Mi
+    revisionHistoryLimit: 10
+    defaultBackend:
+      enabled: true
+      image:
+        repository: billimek/custom-error-pages
+        tag: 0.4.4
+      resources:
+        requests:
+          memory: 250Mi
+          cpu: 25m
+        limits:
+          memory: 350Mi
 
-rbac:
-  create: true
-  scope: false
+    rbac:
+      create: true
+      scope: false
 
-serviceAccount:
-  create: true
+    serviceAccount:
+      create: true
