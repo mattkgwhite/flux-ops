@@ -48,10 +48,15 @@ spec:
           hajimari.io/appName: "Uptime"
           hajimari.io/icon: "update"
         hosts:
-          - host: uptime.robotwizard.co.uk
+          - host: "uptime.robotwizard.co.uk"
             paths:
               - path: "/"
                 pathType: "Prefix"
+                backend:
+                  service:
+                    name: uptime-kuma
+                    port:
+                      number: 80
         tls:
           - hosts:
               - uptime.robotwizard.co.uk
