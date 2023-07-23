@@ -42,9 +42,6 @@ spec:
             name: external-dns
             key: secret-access-key
     extraArgs:
-      - --annotation-filter=external-dns.alpha.kubernetes.io/target
-      - --crd-source-apiversion=externaldns.k8s.io/v1alpha1
-      - --crd-source-kind=DNSEndpoint
       - --aws-zone-type=public
     policy: sync
     sources:
@@ -56,13 +53,6 @@ spec:
       - "robotwizard.co.uk"
       - "matt-white.co.uk"
       - "hacksm.net"
-    podAnnotations:
-      secret.reloader.stakater.com/reload: external-dns-secret
-    # serviceMonitor:
-    #   enabled: true
-    # resources:
-    #   requests:
-    #     memory: 100Mi
-    #     cpu: 25m
-    #   limits:
-    #     memory: 250Mi
+    loglevel: debug
+    logFormat: json
+    interval: 30s
