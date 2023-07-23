@@ -32,6 +32,7 @@ spec:
             targetPort: 3001
       extname:
         enabled: false
+        namespace: monitoring
         type: ExternalName
         externalName: nginx.robotwizard.co.uk
         annotations: 
