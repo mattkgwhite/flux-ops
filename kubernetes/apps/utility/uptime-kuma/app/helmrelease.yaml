@@ -80,9 +80,13 @@ spec:
     #     accessMode: ReadWriteMany
     #     size: 3Gi
     #     retain: true
-    resources:
-      requests:
-        cpu: 100m
-        memory: 52M
-      limits:
-        memory: 128M
+    # resources:
+    #   requests:
+    #     cpu: 100m
+    #     memory: 52M
+    #   limits:
+    #     memory: 128M
+    probes: 
+      readiness: 
+        spec:
+          initialDelaySeconds: 
