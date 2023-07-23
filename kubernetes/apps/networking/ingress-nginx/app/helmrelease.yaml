@@ -31,7 +31,7 @@ spec:
         enabled: true
       service: 
         annotations:
-          external-dns.alpha.kubernetes.io/hostname: ingress.robotwizard.co.uk
+          external-dns.alpha.kubernetes.io/hostname: "ingress.robotwizard.co.uk"
         loadBalancerIP: "168.119.230.133"
       ingressClassResource:
         name: nginx
