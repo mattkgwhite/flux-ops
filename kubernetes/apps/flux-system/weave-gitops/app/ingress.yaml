@@ -33,7 +33,7 @@ spec:
       - pathType: Prefix
         path: /
         backend:
-            service:
-              name: weave-gitops
-              port:
-                number: 9001
+          service:
+            name: weave-gitops
+            port:
+              number: 9001
