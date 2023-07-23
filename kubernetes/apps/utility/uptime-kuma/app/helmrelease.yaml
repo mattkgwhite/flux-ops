@@ -56,14 +56,14 @@ spec:
           - hosts:
               - uptime.robotwizard.co.uk
             secretName: uptime-cert
-    persistence:
-      data:
-        enabled: true
-        mountPath: /app/data
-        storageClass: hcloud-volumes
-        accessMode: ReadWriteMany
-        size: 3Gi
-        retain: true
+    # persistence:
+    #   data:
+    #     enabled: true
+    #     mountPath: /app/data
+    #     storageClass: hcloud-volumes
+    #     accessMode: ReadWriteMany
+    #     size: 3Gi
+    #     retain: true
     resources:
       requests:
         cpu: 100m
