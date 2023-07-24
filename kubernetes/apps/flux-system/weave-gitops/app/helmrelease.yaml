@@ -42,16 +42,16 @@ spec:
             - "ops.robotwizard.co.uk"
           secretName: ops-cert
       rules:
-      - host: "ops.robotwizard.co.uk"
-        http:
-          paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: weave-gitops
-                port:
-                  number: 80
+        - host: "ops.robotwizard.co.uk"
+          http:
+            paths:
+            - pathType: Prefix
+              path: /
+              backend:
+                service:
+                  name: weave-gitops
+                  port:
+                    number: 80
     networkPolicy:
       create: false
     metrics:
