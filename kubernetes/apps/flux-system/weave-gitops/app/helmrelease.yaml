@@ -30,13 +30,12 @@ spec:
       create: true
       createSecret: false
       username: admin
-    # service:
-    #   create: true
-    #   type: ClusterIP
-    #   port: 80
     ingress:
       enabled: enable
       className: nginx
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: nginx.robotwizard.co.uk
+        cert-manager.io/cluster-issuer: letsencrypt-production
       hosts:
         - host: ops.robotwizard.co.uk
           paths:
@@ -46,25 +45,6 @@ spec:
         - hosts:
           - ops.robotwizard.co.uk
           secretName: ops-cert
-      # annotations:
-      #   # hajimari.io/icon: sawtooth-wave
-      #   external-dns.alpha.kubernetes.io/hostname: "ops.robotwizard.co.uk"
-      #   cert-manager.io/cluster-issuer: letsencrypt-production
-      # tls:
-      #   - hosts:
-      #       - "ops.robotwizard.co.uk"
-      #     secretName: ops-cert
-      # rules:
-      # - host: "ops.robotwizard.co.uk"
-      #   http:
-      #     paths:
-      #     - path: /
-      #       pathType: Prefix
-      #       backend:
-      #         service:
-      #           name: weave-gitops
-      #           port:
-      #             number: 80
     networkPolicy:
       create: false
     metrics:
