@@ -36,4 +36,4 @@ spec:
           service:
             name: weave-gitops
             port:
-              number: 80
+              number: 9001

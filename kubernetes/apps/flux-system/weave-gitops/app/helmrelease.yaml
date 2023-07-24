@@ -31,14 +31,9 @@ spec:
       createSecret: false
       username: admin
     service:
-      main:
-        enabled: true
-        type: ClusterIP
-        ports:
-          http:
-            protocol: TCP
-            port: 9001
-            targetPort: 9001
+      create: true
+      type: ClusterIP
+      port: 9001
     ingress:
       enabled: false
       # className: nginx
