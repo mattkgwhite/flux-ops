@@ -30,13 +30,22 @@ spec:
       create: true
       createSecret: false
       username: admin
-    service:
-      create: true
-      type: ClusterIP
-      port: 80
+    # service:
+    #   create: true
+    #   type: ClusterIP
+    #   port: 80
     ingress:
-      enabled: false
-      # className: nginx
+      enabled: enable
+      className: nginx
+      hosts:
+        - host: ops.robotwizard.co.uk
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - hosts:
+          - ops.robotwizard.co.uk
+          secretName: ops-cert
       # annotations:
       #   # hajimari.io/icon: sawtooth-wave
       #   external-dns.alpha.kubernetes.io/hostname: "ops.robotwizard.co.uk"
