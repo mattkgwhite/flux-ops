@@ -1,0 +1,60 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: databases
+spec:
+  interval: 10m
+  chart:
+    spec:
+      chart: postgresql
+      version: 12.7.1
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  maxHistory: 3
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
+  uninstall:
+    keepHistory: false
+  values:
+    global:
+      nameOverride: pg-authentik-rw
+      postgresql:
+        auth:
+          postgresPassword: "${POSTGRES_ADMIN_PASSWORD}"
+          username: robotwizard
+          password: "${POSTGRES_PASSWORD}"
+          database: authentik
+    image:
+      registry: docker.io
+      repository: bitnami/postgresql
+      tag: "15.2.0"
+    primary:
+      persistence:
+        enabled: true
+        storageClass: hcloud-volumes
+        accessModes: 
+          - ReadWriteOnce
+        size: 3Gi
+    metrics:
+      enabled: true
+      serviceMonitor:
+        enabled: true
+  valuesFrom:
+    - kind: Secret
+      name: authentik-postgres
+      valuesKey: postgresPassword
+      targetPath: auth.postgresPassword
+    - kind: Secret
+      name: authentik-postgres
+      valuesKey: password
+      targetPath: auth.password

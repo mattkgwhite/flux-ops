@@ -1,0 +1,83 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: authentik
+  namespace: kube-system
+spec:
+  chart:
+    spec:
+      chart: authentik-charts
+      version: 2023.6.1
+      sourceRef:
+        name: authentik-charts
+        kind: HelmRepository
+        namespace: flux-system
+  values:
+    # server is in active-active, 3 replicas seems to confuse authentik
+    replicas: 1
+    worker:
+      # workers don't need leader election, thus any size works
+      replicas: 1
+    image:
+      repository: ghcr.io/goauthentik/server
+      tag: *vers
+      digest: "sha256:a7ccd464402a9cf9bd36df73dd1f85cd90df6dce2d5d721a7de7a55c6f72962a"
+      pullPolicy: IfNotPresent
+    service:
+      port: 9000
+    ingress:
+      enabled: true
+      ingressClassName: "nginx"
+      annotations: 
+        external-dns.alpha.kubernetes.io/hostname: nginx.robotwizard.co.uk
+        external-dns.alpha.kubernetes.io/ttl: "300"
+      hosts:
+        - host: authentik.robotwizard.co.uk
+          paths:
+            - path: "/"
+              pathType: Prefix
+      tls:
+        - hosts:
+            - authentik.robotwizard.co.uk
+          secretName: authentik-tls
+    volumes:
+    - name: authentik-tls
+      secret:
+        secretName: authentik-tls
+        optional: false
+        items:
+        - key: tls.crt
+          path: fullchain.pem
+        - key: tls.key
+          path: privkey.pem
+    volumeMounts:
+    - name: authentik-tls
+      mountPath: /certs/-k8s
+      readOnly: true
+    authentik:
+      log_level: debug
+      # secret_key: "${SECRET_AUTHENTIK_SECRET_KEY}"
+      outposts:
+        container_image_base: ghcr.io/goauthentik/%(type)s:%(version)s
+      error_reporting:
+        enabled: false
+        send_pii: false
+      postgresql:
+        enabled: false
+        host: 'pg-authentik-rw'
+        port: 5432
+        name: ""
+        user: ""
+        password: ""
+      redis:
+        host: "authentik-redis.authentik.svc.cluster.local"
+        password: ""
+    envValueFrom:
+      AUTHENTIK_SECRET_KEY:
+        secretKeyRef:
+          name: authentik
+          key: AUTHENTIK_SECRET_KEY
+    redis:
+      enabled: false
+    blueprints: []

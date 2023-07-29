@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: authentik-postgres
+stringData:
+    postgresPassword: ENC[AES256_GCM,data:DRTig4Ir35j7Af6xFkUZiYKrPO5kNh83pHDtCNz5meUNWhVPvPOaJ09iZSL9tHlj,iv:xUmyEnLpVfQKi8R02Q6RHgQkgmwkPptnnJtgSvt6nDc=,tag:QdYwlN5QL8nkbOmgW9a+9g==,type:str]
+    password: ENC[AES256_GCM,data:vie4oQ==,iv:Z4xxA9rvv1IiUr3sCOsjLBPCc32MwcoKnEs+lEH+9PU=,tag:MJox0MwmKLJWiHMjUaBuuA==,type:str]
+sops:
+    kms: []
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age:
+        - recipient: age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
+          enc: |
+            -----BEGIN AGE ENCRYPTED FILE-----
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSB4ZVl1bEtuZ3FacmM0bXR6
+            VmdCZEYrY1RjWkI1dFM2UEV5ckJNM1U5RlIwClVGRHRCNlpQVERnWjVhUGVaME04
+            ZnJvOWJ0WEUyUGxVTWIreXZyV2R0cjgKLS0tIGdzVk54eGtUWUxGck1xZkpuZy84
+            Qk5zUHZxSmZJQWJZeDBCTlZ2TXRJa2MKJD3hX4wBjpG42YkznNtCBY6YZQ0alwvZ
+            kou43cg0lifHWHLq5+vfVOMMxVitzxRg+XJmgjBWgrC128oMxIWNvQ==
+            -----END AGE ENCRYPTED FILE-----
+    lastmodified: "2023-07-29T20:53:35Z"
+    mac: ENC[AES256_GCM,data:BxsgVsnHkp1BxwPKml00ffIdPvjb97TsOVFyVekfGGhmJFmv/J26gK3QoowneIJ1kV2Rb/m9Vx+6zy5ineDJoFN58mTZ2A4HOwkGksorFnd/hr/xjzPgC+C3qXeupu5FAKADh4va7Zn4ys8ltxDEKjs71+7ORGGmXGIgztQrIkY=,iv:eNP+vzPUIlmyE+dkz4eP+RJg2t0HESZsIOVZjvgetDQ=,tag:fuDyRCUiXowR1E0+aUmxsQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
