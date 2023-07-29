@@ -46,7 +46,7 @@ spec:
         tls:
           - hosts:
               - kubernetes.robotwizard.co.uk
-            secretName: kubernetes-dashboard-tls
+            secretName: robotwizard-co-uk-tls
     metricsScraper:
       enabled: true
     serviceMonitor:
