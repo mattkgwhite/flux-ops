@@ -57,5 +57,5 @@ spec:
   valuesFrom:
     - kind: Secret
       name: cluster-user-auth
-      valuesKey: adminPassword
+      valuesKey: password
       targetPath: adminUser.passwordHash
