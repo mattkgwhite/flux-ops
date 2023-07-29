@@ -29,8 +29,6 @@ spec:
     controller:
     name: controller
     containerName: controller
-    admissionWebhooks:
-      enabled: false
     replicaCount: 1
     config:
       custom-http-errors: 404,401,403,500,503
