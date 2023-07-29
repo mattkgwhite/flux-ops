@@ -31,7 +31,7 @@ spec:
       createSecret: false
       username: admin
     ingress:
-      enabled: enable
+      enabled: true
       className: nginx
       annotations:
         external-dns.alpha.kubernetes.io/hostname: nginx.robotwizard.co.uk
@@ -54,3 +54,8 @@ spec:
       impersonationResourceNames: ["admin"]
     podAnnotations:
       secret.reloader.stakater.com/reload: cluster-user-auth
+  valuesFrom:
+    - kind: Secret
+      name: cluster-user-auth
+      valuesKey: adminPassword
+      targetPath: adminUser.passwordHash
