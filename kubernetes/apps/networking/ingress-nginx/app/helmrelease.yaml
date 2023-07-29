@@ -63,20 +63,11 @@ spec:
       targetCPUUtilizationPercentage: 50
       targetMemoryUtilizationPercentage: 50
       behavior: {}
-      # scaleDown:
-      #   stabilizationWindowSeconds: 300
-      #   policies:
-      #   - type: Pods
-      #     value: 1
-      #     periodSeconds: 180
-      # scaleUp:
-      #   stabilizationWindowSeconds: 300
-      #   policies:
-      #   - type: Pods
-      #     value: 2
-      #     periodSeconds: 60
     service:
       enabled: true
+      annotations:
+        external-dns.alpha.kubernetes.io/hostname: "ingress.robotwizard.co.uk"
+      loadBalancerIP: "168.119.230.133/32"
       # -- If enabled is adding an appProtocol option for Kubernetes service. An appProtocol field replacing annotations that were
       # using for setting a backend protocol. Here is an example for AWS: service.beta.kubernetes.io/aws-load-balancer-backend-protocol: http
       # It allows choosing the protocol for each backend specified in the Kubernetes service.
