@@ -19,7 +19,7 @@ spec:
     - apiVersion: helm.toolkit.fluxcd.io/v2beta1
       kind: HelmRelease
       name: authentik
-      namespace: kube-system
+      namespace: authentik
   interval: 30m
   retryInterval: 1m
   timeout: 3m
@@ -30,7 +30,7 @@ metadata:
   name: authentik-redis
   namespace: flux-system
 spec:
-  path: ./kube/deploy/apps/authentik/redis
+  path: ./kubernetes/apps/kube-system/authentik/redis
   interval: 30m
   retryInterval: 1m
   timeout: 3m
@@ -45,7 +45,7 @@ metadata:
   name: authentik-postgres
   namespace: flux-system
 spec:
-  path: ./kube/deploy/apps/authentik/postgres
+  path: ./kubernetes/apps/kube-system/authentik/postgres
   interval: 30m
   retryInterval: 1m
   timeout: 3m
