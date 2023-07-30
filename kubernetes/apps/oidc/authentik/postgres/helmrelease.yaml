@@ -42,7 +42,7 @@ spec:
     primary:
       persistence:
         enabled: true
-        storageClass: hcloud-volumes
+        storageClass: hcloud-volume
         accessModes: 
           - ReadWriteOnce
         size: 8Gi
