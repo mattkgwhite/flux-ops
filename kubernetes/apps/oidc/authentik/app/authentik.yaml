@@ -2,13 +2,13 @@ apiVersion: v1
 kind: Secret
 metadata:
     name: authentik
-    namespace: authentik
+    namespace: oidc
 stringData:
-    AUTHENTIK_SECRET_KEY: ENC[AES256_GCM,data:a1Refe7dvWqKQ85fJva2MpGlq5gATiacMOb6UDOY2/YfX2TireKL1JTR6GEvLh+t,iv:oUGckE+tM68U4rgITCJ1cc8yIB7zxfkclK01gFEAp5M=,tag:nJSs0Lg1fqAUbjQvfrXWLg==,type:str]
-    #ENC[AES256_GCM,data:G7u6ghH+yaDc2te2NG/KDvhFGGFtATfkgC+Oo0fKyPV822BXLYE=,iv:kbi0bJLq0Ud/kgU6kJDzlk9oR9ArUTX3AesdLBsDFLY=,tag:Y7utgke29ULAt6T24QDGLQ==,type:comment]
-    #ENC[AES256_GCM,data:LfUxu37nG9fiZt9xT/jh2tGCyc1H2BAGv96xbrSVlSK9i7YLefNLpe55,iv:S1tHIxLFvUyU9N5w8qDsseqbbfDswHLoJJ8c86n0Ebk=,tag:oukds7m5HCl1EuQb7gu9kQ==,type:comment]
-    #ENC[AES256_GCM,data:pXpejwY2XyeOFC926Z5htqm+t2xRdmx//8LIJCwoTj+6fRnjjbXz8WCpTsw1dquW2w/ptchBKd91kdYc+YfTsk6tACsMKXDnjtMh94hbJF+a,iv:7GvPoDQEMVMstL1yOnNfgxifyvIuoDYBzlG7XrdGid0=,tag:gonF9PGxoCJZMAIw0u7WRg==,type:comment]
-    #ENC[AES256_GCM,data:JsfR3oXlBfVFm1ovwHLQsYSJMgCSB2vRWqOCo9pgA5MJm9U=,iv:ezljMaXM5DVdBOXz5Gclq6J2CG4bkpTHraLfS3gHy+c=,tag:tqBxlYV/v2zkUZo7/uJ2bQ==,type:comment]
+    AUTHENTIK_SECRET_KEY: ENC[AES256_GCM,data:Lq022iYn4XYG/R7XdSji8bwepSIqIBTNNRaCQVI3XEOd7Oq6pj4uiGv/3d/bJX0Z,iv:9AJCdxt0Pl8lGXHYPruSmp3ceBYcudDL9FYKBkH5CTc=,tag:VB1WNhv61IdEV9YMmY8Ivw==,type:str]
+    #ENC[AES256_GCM,data:UAHScYHaDlsAImkkSxy5iuayCPHRECVfvuWAgHGCa60nVgAj8Ks=,iv:BzUQBtGZ9F7xf1Tz7BFtTivfo1Ro2YqNmO7/fv6ct1g=,tag:j011QrmI7OelS3l+gQVe+g==,type:comment]
+    #ENC[AES256_GCM,data:y025gW2DCjR7212OmKkZ0ypBncRgYSW5fs7q7gpGFO52I5Iut8dkS2D4,iv:IOz5yI6XaVgaCDDdSbix2DRQWnlUOib0IqobaozwNUo=,tag:fIngqxlTDhContfZi7VHBg==,type:comment]
+    #ENC[AES256_GCM,data:YqnovOG14mM9QSaOMMGJ0vzFqnpiJB4c6D2FqcFBxh/TOHdDbcKyhGcB0u9m/9BbVZg/tuv0rO84bktRFhQt+8VVFJOD0wyBPiUwyeSGYx5O,iv:ymhoMDRNYHs446DJWHHwojI4qzhc8TFqYOxT1TItgRE=,tag:UaU1zpEzQYI0VACDQGvPSA==,type:comment]
+    #ENC[AES256_GCM,data:8D5hKorfY0F5RX+NOdFmpOqJ8KMWH6ayrXQYkxi++0gDwI0=,iv:8p+J9PQXv7GSGMUHbR2jFWL09PX9RTGJRLUAxgUiYVc=,tag:173Y1cBL4ZrXPD3eeKoUIA==,type:comment]
 sops:
     kms: []
     gcp_kms: []
@@ -18,14 +18,14 @@ sops:
         - recipient: age1ytjlx50szj2283j7vacf9ezhrct2mcfcjmqqjgqa37eqhcgt853s8mmlwu
           enc: |
             -----BEGIN AGE ENCRYPTED FILE-----
-            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBhRXBkR2NGeDU2ZTRPeTE0
-            YWtZbzFzZWt4NmtabWM3Rzl6eGpGTEVvcEZnCldaalFzbE9yYjlHbURnQ0tQN2l5
-            WVpQWVd0Y1J2WnVlWWt1S0xsc1RJd28KLS0tIE00UFY4UW1WZDBrTjArNlppL1Rv
-            YzVHK3lkRVdpTVdhSmNGakZsZ3RRSEEKcqln2SsE8ZV064FOELB8U9UVJzMa0Dnq
-            z9MaNSnFPFXN+mmcNsqAcnxUMgYZEbLuCBnKv4ugRIMAs2HfmRpQlA==
+            YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSBIM0VnaDZ0bkJoSE5vSXho
+            VDJ2QTh6NGpCQWN4VTVuWjBCYW5DRmZXVURVCmhqaVRZS3ZYdGFHS0o1c0FkWS9V
+            T1R3cksrWHY1Y2VKT2FlYkx2NXlMKzQKLS0tIDhNWk90Z29rc0V2OXNOSGFmTDRX
+            Vkh5SWgrR2pEOE5oekFwTUdvYVVUclEKPLddNczH81yHBwd4KmOfpUtdBlW7nkxr
+            phf2/pYVIiipFvl5m47hhXNhEPryyDinVCmhk+LqY2OkRo3F5nXJQA==
             -----END AGE ENCRYPTED FILE-----
-    lastmodified: "2023-07-30T15:27:40Z"
-    mac: ENC[AES256_GCM,data:ctTzCNmFCedk6qWTvJy7V2bBMzdzwF/IungpWVUcoEZAtifR3k4yUUOwgh+g76pZCm/22kiSGXDyvCbwyNY45OcuXnFnj16QYO+dsGtrljiijuaLHDvVy4GM22TIG12dol5td/i+7fCaeEJjcwR0UeOyVPVrbEEalh7jZAJxNOo=,iv:u8HGJzOVjGtnPBEzRIRxiJMqeBxeuK+Bb24SNx0GRYQ=,tag:uY6O4edRliEK+/v01p6o8A==,type:str]
+    lastmodified: "2023-07-30T15:31:40Z"
+    mac: ENC[AES256_GCM,data:M/MVEIGnPNOtptlPe3/6bScAHUMPOhLOtiu/mP+2OBm+SLOaymvc9xo0qXIspT2lDUwkAm+zCvEfAGy5nNa2qXshwmrlyoS4vXbquiux4C5FW+9ylqBPtMF1O+gP0G69q1r7s0bSh3aZUU8+ucpPYfa+2mTgSADsw/1JNTqVpTA=,iv:ZzljpzXOR1CttZJMllXT3L+MnxK6Rd5pTW78CoflEzY=,tag:adPp6LEOLKIODsxfXVWuPQ==,type:str]
     pgp: []
     encrypted_regex: ^(data|stringData)$
     version: 3.7.3
