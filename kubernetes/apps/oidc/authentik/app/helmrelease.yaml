@@ -5,6 +5,7 @@ metadata:
   name: authentik
   namespace: oidc
 spec:
+  interval: 15m
   chart:
     spec:
       chart: authentik-charts
