@@ -42,10 +42,10 @@ spec:
     primary:
       persistence:
         enabled: true
-        # storageClass: hcloud-volumes
-        # accessModes: 
-        #   - ReadWriteMany
-        # size: 3Gi
+        storageClass: hcloud-volumes
+        accessModes: 
+          - ReadWriteOnce
+        size: 8Gi
     metrics:
       enabled: true
       serviceMonitor:
