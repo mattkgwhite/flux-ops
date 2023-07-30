@@ -5,7 +5,7 @@ metadata:
   name: cluster-apps-hcloud-csi-driver
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/storage/hcloud-csi-driver/app
+  path: ./kubernetes/apps/kube-system/hcloud-csi-driver/app
   prune: true
   sourceRef:
     kind: GitRepository
