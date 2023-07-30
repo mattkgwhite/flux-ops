@@ -43,9 +43,6 @@ spec:
       persistence:
         enabled: true
         storageClass: hcloud-volumes
-        accessModes: 
-          - ReadWriteMany
-        size: 3Gi
     metrics:
       enabled: true
       serviceMonitor:
