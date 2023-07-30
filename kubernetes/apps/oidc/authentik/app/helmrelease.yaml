@@ -21,7 +21,7 @@ spec:
       replicas: 1
     image:
       repository: ghcr.io/goauthentik/server
-      tag: *vers
+      tag: 2023.6.1
       digest: "sha256:a7ccd464402a9cf9bd36df73dd1f85cd90df6dce2d5d721a7de7a55c6f72962a"
       pullPolicy: IfNotPresent
     service:
