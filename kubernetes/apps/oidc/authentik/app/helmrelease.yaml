@@ -13,6 +13,7 @@ spec:
         name: authentik-charts
         kind: HelmRepository
         namespace: flux-system
+      interval: 15m
   values:
     # server is in active-active, 3 replicas seems to confuse authentik
     replicas: 1
@@ -58,8 +59,8 @@ spec:
     authentik:
       log_level: debug
       # secret_key: "${SECRET_AUTHENTIK_SECRET_KEY}"
-      outposts:
-        container_image_base: ghcr.io/goauthentik/%(type)s:%(version)s
+      # outposts:
+      #   container_image_base: ghcr.io/goauthentik/%(type)s:%(version)s
       error_reporting:
         enabled: false
         send_pii: false
