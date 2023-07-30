@@ -30,7 +30,7 @@ metadata:
   name: authentik-redis
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/kube-system/authentik/redis
+  path: ./kubernetes/apps/oidc/authentik/redis
   interval: 30m
   retryInterval: 1m
   timeout: 3m
@@ -45,7 +45,7 @@ metadata:
   name: authentik-postgres
   namespace: flux-system
 spec:
-  path: ./kubernetes/apps/kube-system/authentik/postgres
+  path: ./kubernetes/apps/oidc/authentik/postgres
   interval: 30m
   retryInterval: 1m
   timeout: 3m
