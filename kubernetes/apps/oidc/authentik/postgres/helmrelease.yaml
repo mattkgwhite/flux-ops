@@ -44,7 +44,7 @@ spec:
         enabled: true
         storageClass: hcloud-volumes
         accessModes: 
-          - ReadWriteOnce
+          - ReadWriteMany
         size: 3Gi
     metrics:
       enabled: true
