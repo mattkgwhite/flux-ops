@@ -43,7 +43,7 @@ spec:
       ## Name of the StorageClass to be created.
       name: hcloud-volumes
       ## Should the StorageClass be annotated as default storage class?
-      isDefault: false
+      isDefault: true
       ## The reclaimPolicy that the StorageClass should use
       reclaimPolicy: "Delete"
     ## secret for the Hetzner Cloud API token
