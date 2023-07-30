@@ -6,11 +6,11 @@ metadata:
   namespace: flux-system
 spec:
   path: ./kubernetes/apps/kube-system/authentik/app
-  healthchecks: 
-    - name: authentik
-      namespace: authentik
-      kind: helmrelease
-      apiVersion: helm.toolkit.fluxcd.io/v2beta1
+  # healthchecks: 
+  #   - name: authentik
+  #     namespace: authentik
+  #     kind: helmrelease
+  #     apiVersion: helm.toolkit.fluxcd.io/v2beta1
   prune: true
   sourceRef:
     kind: GitRepository
