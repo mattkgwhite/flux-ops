@@ -52,7 +52,6 @@ spec:
       - "squirrelmentality.co.uk"
       - "robotwizard.co.uk"
       - "matt-white.co.uk"
-      - "hacksm.net"
     loglevel: debug
     logFormat: json
     interval: 30s
