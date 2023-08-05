@@ -41,7 +41,7 @@ spec:
     ## Settings for the StorageClass resource to be created.
     storageClass:
       ## Name of the StorageClass to be created.
-      name: hcloud-volume
+      name: hcloud-volumes
       ## Should the StorageClass be annotated as default storage class?
       isDefault: false
       ## The reclaimPolicy that the StorageClass should use
