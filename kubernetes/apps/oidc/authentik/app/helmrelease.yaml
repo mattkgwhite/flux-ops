@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: authentik-charts
-      version: 2023.6.1
+      version: 2023.6.3
       sourceRef:
         name: authentik-charts
         kind: HelmRepository
