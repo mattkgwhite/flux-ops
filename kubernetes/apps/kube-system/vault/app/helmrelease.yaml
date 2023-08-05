@@ -50,7 +50,7 @@ spec:
       enabled: true
       size: 10Gi
       mountPath: "/vault/data"
-      storageClass: hcloud-volumes
+      storageClass: hcloud-volume
       accessMode: ReadWriteOnce
     standalone:
         enabled: "true"

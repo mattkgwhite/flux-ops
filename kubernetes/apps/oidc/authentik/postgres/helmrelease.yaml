@@ -41,8 +41,8 @@ spec:
       tag: "15.2.0"
     primary:
       persistence:
-        enabled: true
-        storageClass: hcloud-volumes
+        enabled: false
+        storageClass: hcloud-volume
         accessModes: 
           - ReadWriteOnce
         size: 8Gi
