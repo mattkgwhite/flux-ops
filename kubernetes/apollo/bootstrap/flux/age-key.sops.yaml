@@ -1,0 +1,23 @@
+# yamllint disable
+apiVersion: v1
+kind: Secret
+metadata:
+    name: sops-age
+    namespace: flux-system
+stringData:
+    age.agekey: ENC[AES256_GCM,data:PcD/OQrSPhIzmFtHWMRrVSGY5F0DKVm5NxhP5xyX0QVZzhozwrbmDPBJHnNJ7iOZaRnfAc2Vo7CvP6jLEsZs90CARHOxZ/O6VLI=,iv:BHaXrPfWmgToeKVqCCKB+fkqo/57rC6K70E8lqx5YVA=,tag:7v2fVIgJKUsj85eielcYZw==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f
+          created_at: "2023-05-28T22:22:32Z"
+          enc: AQICAHj/+PwZrYiv+HkNp6sXnAQerEWUn8+hg6fmiGghYvJqmgHg8oLaVqul+HTNwz8LQomqAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMaKoxyhYN5PcNDXnBAgEQgDt6YL0ytZ4mbAhIhpxUzHf/scL5aSYu4dJC57FEQeF2GnlnpJcpXFe+r5HiKM9conNmBGqwf0gEDttRNg==
+          aws_profile: default
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-05-28T22:22:32Z"
+    mac: ENC[AES256_GCM,data:CRB+pBQP9NSMFVzuSdIoJ+B5qSHvzruI5fDpadlO3+giSIrzNKL7xXiIRt0H7sABqwC9Ei15Z8OhuIhRnjr/eMaILZYi1rj9lmnQ2KxLbnF/aLJN7BRp17hJ9Ldsx4zCiFBVPL5Nk0KF4fBXd+eOUHfSrSmVmGiLDijh8NJfQWU=,iv:WezsAlDSJ1/4V3n21BoZ8tCBkRAvWQPqi3CxYTimDpM=,tag:Zd/JbhK8OZZr5sHgQipHLg==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.7.3
