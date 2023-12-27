@@ -20,8 +20,6 @@ spec:
           dnsZones:
             - squirrelmentality.co.uk
             - robotwizard.co.uk
-            - matt-white.co.uk
-            - hacksm.net
 ---
 apiVersion: cert-manager.io/v1
 kind: ClusterIssuer
@@ -45,5 +43,3 @@ spec:
           dnsZones:
             - squirrelmentality.co.uk
             - robotwizard.co.uk
-            - matt-white.co.uk
-            - hacksm.net
