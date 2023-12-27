@@ -20,4 +20,4 @@ metadata:
   namespace: networking
 spec:
   addresses:
-    - 168.119.230.133/32
+    - 167.235.66.20/32
