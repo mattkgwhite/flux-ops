@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Secret
+metadata:
+    name: aws-creds
+    namespace: networking
+stringData:
+    access-key-id: ENC[AES256_GCM,data:Yzd66Gx+MTaTmqGltQVSj64W35g=,iv:PSzzS26wRA65qYmpNDeZn9wRHtrS+/+BFQX5fkZlv2A=,tag:BwvnWPWkev7M/lA645ylkQ==,type:str]
+    secret-access-key: ENC[AES256_GCM,data:2mAgDOB2Hwms3unQ8vT5B5EYujkkJOgPxt783pBSmfpuTs4ASAv29A==,iv:9yjh6ozTAK+J7c0AZje6Q24Eu5rMTFJMi6a8NmgWgq4=,tag:jwQZceBDsfFVzBCgUvdnzg==,type:str]
+sops:
+    kms:
+        - arn: arn:aws:kms:eu-west-1:474108156746:key/bc5f3b08-70c6-4421-a8ee-f6fe32d94d6f
+          created_at: "2023-12-27T22:34:40Z"
+          enc: AQICAHj/+PwZrYiv+HkNp6sXnAQerEWUn8+hg6fmiGghYvJqmgHEOXKkx65+KLyYF9eKYzvqAAAAfjB8BgkqhkiG9w0BBwagbzBtAgEAMGgGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM93VFT9Kqvg7aHu0PAgEQgDvcqpdUL7mYgKsKr5lyBU0ZkNE18oDr5mVJF5v4D5NhQf3b7zcZxOdEX5E59WKoreXZKgPW6ungk5dO/Q==
+          aws_profile: default
+    gcp_kms: []
+    azure_kv: []
+    hc_vault: []
+    age: []
+    lastmodified: "2023-12-27T22:34:41Z"
+    mac: ENC[AES256_GCM,data:NtQZxN8io3hEcdvdMsH97h0BW/bFcmQKRu5wraXTioGnKt1oUP3OeFtpdKEwvWp1lO79Z/bJcKPyrrtUNgRHEXiPXXsrQVPTYZT3HYMoPc/xx8d2tM2ox9JjjSYB79C0DWF3Zj/6fYO2eMzn/io0D3IO5qS/RGGXPsEEJMdbmHs=,iv:s+gvetMII3f8dV5vxffBGNYVSSACXdrm7lBJ+0rchO4=,tag:4ZrCad89z1Dv4D61d6ydyQ==,type:str]
+    pgp: []
+    encrypted_regex: ^(data|stringData)$
+    version: 3.8.1

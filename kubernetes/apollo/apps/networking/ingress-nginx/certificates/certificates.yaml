@@ -1,0 +1,32 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/certificate_v1.json
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: squirrel-mentality-co-uk
+  namespace: networking
+spec:
+  secretName: squirrel-mentality-co-uk-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: squirrelmentality.co.uk
+  dnsNames:
+    - squirrelmentality.co.uk
+    - "*.squirrelmentality.co.uk"
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.devbu.io/cert-manager.io/certificate_v1.json
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: robotwizard-co-uk
+  namespace: networking
+spec:
+  secretName: robotwizard-co-uk-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: robotwizard.co.uk
+  dnsNames:
+    - robotwizard.co.uk
+    - "*.robotwizard.co.uk"
