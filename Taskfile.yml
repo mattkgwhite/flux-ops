@@ -16,6 +16,8 @@ includes:
   # precommit: .taskfiles/PrecommitTasks.yml
   ku: .taskfiles/Kubernetes/Tasks.yml
   es: .taskfiles/Kubernetes/Tasks.yml
+  kuap: .taskfiles/Kubernetes/Tasks-Apollo.yml
+  kupo: .taskfiles/Kubernetes/Tasks-Poseidon.yml
 
 
 tasks:
